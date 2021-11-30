@@ -6,7 +6,7 @@ const PerfilUsuarioPantalla2 = () => {
   return (
     <>
       <div classname="form-group">
-        <label className="text-center">
+        <label htmlFor="exampleFormControlSelect1">
           Seleccionar Pauta de Supervision:
         </label>
         <select className="form-control" id="exampleFormControlSelect1">
