@@ -8,11 +8,13 @@ import AccesoAdministrador from './component/acceso_administrador';
 import SolicitudesUsuarios from './component/solicitudes_usuarios';
 import BuscadorUsuario from './component/buscador_usuarios';
 import ConstruccionFormulario from './component/construccion_form';
+import ResultadosPautas from './component/resultados_pautas';
+
 
 function App() {
   return (
     <div className="App">
-      <ConstruccionFormulario/>
+      <ResultadosPautas/>
     </div>
   );
 }
