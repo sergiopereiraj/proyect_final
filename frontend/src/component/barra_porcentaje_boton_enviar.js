@@ -6,6 +6,7 @@ const BarraPorcentajeBoton = () => {
     <>
       <div className="container">
         <div className="row">
+          <p className="text-center">Titulo</p>
           <div className="progress">
             <div
               className="progress-bar progress-bar-striped progress-bar-animated"

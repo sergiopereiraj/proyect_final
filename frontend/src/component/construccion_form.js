@@ -1,10 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const FormularioLavado = () => {
+const ConstruccionFormulario = () => {
   return (
     <>
       <div className="container">
+        <p className="text-center">Titulo Formulario</p>
         <div className="row">
           <table striped bordered hover size="sm" className="table border">
             <thead>
@@ -136,4 +137,4 @@ const FormularioLavado = () => {
   );
 };
 
-export default FormularioLavado;
+export default ConstruccionFormulario;
