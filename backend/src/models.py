@@ -1,3 +1,4 @@
+import datetime
 from flask_sqlalchemy import SQLAlchemy
 db=SQLAlchemy()
 
@@ -22,6 +23,7 @@ class Profile(db.Model):
     email= db.Column(db.String(200), nullable=False, unique=True)
     rol= db.Column(db.String(200))
     phone= db.Column(db.String(200))
+    user_id= db.Column(db.Integer, db.ForeignKey('users.id'))
 
 class Role(db.Model):
     __tablename__ = "roles"
@@ -43,16 +45,21 @@ class Requerimiento(db.Model):
     id= db.Column(db.Integer, primary_key=True)
     texto= db.Column(db.Text(500))
     seleccion= db.Column(db.Boolean, default=False)
+    pauta_id= db.Column(db.Integer, db.ForeignKey('pautas.id'))
 
 class Resultado(db.Model):
     __tablename__= "resultados"
     id= db.Column(db.Integer, primary_key=True)
     texto= db.Column(db.Text(500))
-    created_at= db.Column(db.timestamp)
+    created_at= db.Column(db.DateTime, datetime.datetime.utcnow)
+    supervision_id= db.Column(db.Integer, db.ForeignKey('supervisiones.id'))
+    requerimiento_id= db.Column(db.Integer, db.ForeignKey('requerimientos.id'))
 
 class Supervision(db.Model):
     __tablename__= "supervisiones"
     id= db.Column(db.Integer, primary_key=True)
     text= db.Column(db.Text(500))
-    created_at= db.Column(db.timestamp)
+    created_at= db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    pauta_id= db.Column(db.Integer, db.ForeignKey('pautas.id'))
+    user_id= db.Column(db.Integer, db.ForeignKey('users.id'))
 
