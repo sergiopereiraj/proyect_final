@@ -31,14 +31,17 @@ const MyForm = () => {
             </div>
             <div className="col-md-12">
                 <label htmlFor="inputPassword4" className="form-label">Password</label>
-                <input {...register("password", { required: true, minLength: 8, pattern: /^[A-Za-z]+$/i })} type="password" className={"form-control" + (errors.password?.type === 'required' ? " is-invalid" : "")} />
+                <input {...register("password", { required: true, minLength: 8,  maxLength: 12, pattern: /^[A-Za-z 0-9]+$/i })} type="password" className={"form-control" + (errors.password?.type === 'required' ? " is-invalid" : "")} />
                 <div className="invalid-feedback">
                     {errors.password?.type === 'required' && "Password is required"}
                 </div>
             </div>
             <div className="col-12">
                 <label htmlFor="inputAddress" className="form-label">Rut</label>
-                <input {...register("Rut")} type="text" className="form-control" placeholder="XXXX" />
+                <input {...register("Rut", { required: true, minLength: 8,  maxLength: 12, pattern: /^[A-Za-z 0-9]+$/i })} type="text" className={"form-control" + (errors.password?.type === 'required' ? " is-invalid" : "")} placeholder="XXXX" />
+                <div className="invalid-feedback">
+                    {errors.rut?.type === 'required' && "Rut is required"}
+                </div>
             </div>
             <div className="col-12">
                 <label htmlFor="inputAddress2" className="form-label">Telefono</label>
@@ -58,10 +61,6 @@ const MyForm = () => {
                     <option selected>Choose...</option>
                     <option>...</option>
                 </select>
-            </div>
-            <div className="col-md-12">
-                <label htmlFor="inputZip" className="form-label">Zip</label>
-                <input type="text" className="form-control" id="inputZip" />
             </div>
             <div className="col-12">
                 <div className="form-check">

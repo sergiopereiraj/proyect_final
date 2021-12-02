@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import Login from './Componentes/Login';
 import UserLogIn from './Componentes/UserLogIn';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer  from './Componentes/Footer';
 import "bootstrap/dist/js/bootstrap.bundle"
+import Navbar from './Componentes/Navbar';
 
 
 function App() {
   return (
     <>
-    <Login />
+    <Navbar />
     <div className="container">
     <UserLogIn />
     </div>
