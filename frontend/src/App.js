@@ -14,17 +14,7 @@ import BotonesMeses from './component/botones_meses';
 function App() {
   return (
     <div className="App">
-      <ServiciosClinicos/>
-      <SolicitudesUsuarios/>
-      <SelectPautas/>
-      <ResultadosPautas/>
-      <FormularioLavado/>
-      <ConstruccionFormulario/>
-      <CartaGraficos/>
-      <BuscadorUsuario/>
-      <BotonesMeses/>
-      <BarraPorcentajeBoton/>
-      <AccesoAdministrador/>
+
     </div>
   );
 }
