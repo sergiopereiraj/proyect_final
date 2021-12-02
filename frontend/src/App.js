@@ -1,23 +1,30 @@
 import logo from './logo.svg';
-import './App.css';
+import CartaGraficos from './component/carta_graficos';
+import ServiciosClinicos from './component/servicios_clinicos';
+import FormularioLavado from './component/formulario_pauta_lavado_de_manos';
+import BarraPorcentajeBoton from './component/barra_porcentaje_boton_enviar';
+import AccesoAdministrador from './component/acceso_administrador';
+import SolicitudesUsuarios from './component/solicitudes_usuarios';
+import BuscadorUsuario from './component/buscador_usuarios';
+import ConstruccionFormulario from './component/construccion_form';
+import ResultadosPautas from './component/resultados_pautas';
+import SelectPautas from './component/select_pautas';
+import BotonesMeses from './component/botones_meses';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ServiciosClinicos/>
+      <SolicitudesUsuarios/>
+      <SelectPautas/>
+      <ResultadosPautas/>
+      <FormularioLavado/>
+      <ConstruccionFormulario/>
+      <CartaGraficos/>
+      <BuscadorUsuario/>
+      <BotonesMeses/>
+      <BarraPorcentajeBoton/>
+      <AccesoAdministrador/>
     </div>
   );
 }
