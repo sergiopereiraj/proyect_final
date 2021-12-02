@@ -1,6 +1,9 @@
 import Button from '@restart/ui/esm/Button';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
+import injectContext from './AppContent';
+import MyForm from './Form';
+
 
 function MyModal() {
   const [show, setShow] = useState(false);
@@ -18,7 +21,9 @@ function MyModal() {
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <MyForm />
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -32,4 +37,4 @@ function MyModal() {
   );
 }
 
-export default MyModal
+export default  injectContext(MyModal);
