@@ -11,7 +11,7 @@ app.url_map.strict_slashes = False
 app.config['DEBUG'] = True
 app.config['ENV'] = 'development'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['JWT_SECRET_KEY'] = '455a0595071af6e2385c0ec556cb329c'
 db.init_app(app)
 Migrate(app, db) #db init, db migrate, db upgrade, db downgrade

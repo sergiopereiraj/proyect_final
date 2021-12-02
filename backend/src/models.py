@@ -51,7 +51,7 @@ class Resultado(db.Model):
     __tablename__= "resultados"
     id= db.Column(db.Integer, primary_key=True)
     texto= db.Column(db.Text(500))
-    created_at= db.Column(db.DateTime, datetime.datetime.utcnow)
+    created_at= db.Column(db.DateTime, default=datetime.datetime.utcnow)
     supervision_id= db.Column(db.Integer, db.ForeignKey('supervisiones.id'))
     requerimiento_id= db.Column(db.Integer, db.ForeignKey('requerimientos.id'))
 
