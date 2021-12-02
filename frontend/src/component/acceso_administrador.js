@@ -1,24 +1,24 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Container,
+  Row,
+  ProgressBar,
+  Button,
+  ButtonGroup,
+} from "react-bootstrap";
 
 const AccesoAdministrador = () => {
   return (
-    <div className="container">
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-primary m-1">
-          Registrar Usuario
-        </button>
-        <button type="button" class="btn btn-primary m-1">
-          Solicitudes de Usuario
-        </button>
-        <button type="button" class="btn btn-primary m-1">
-          Perfil de Usuario
-        </button>
-        <button type="button" class="btn btn-primary m-1">
-          Pauta de Supervision
-        </button>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <ButtonGroup vertical>
+          <Button className="m-1">Registrar Usuario</Button>
+          <Button className="m-1">Solicitudes de Usuario</Button>
+          <Button className="m-1">Perfil de Usuario</Button>
+          <Button className="m-1">Pauta de Supervision</Button>
+        </ButtonGroup>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,28 +1,21 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Table, InputGroup, Form } from "react-bootstrap";
 
 const BuscadorUsuario = () => {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <table striped bordered hover size="sm" className="table border">
+      <Container>
+        <Row>
+          <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
                 <th>
-                  <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon1">
-                      Nombre Usuario:
-                    </span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Nombre Apellido"
-                      aria-label="Username"
-                      aria-describedby="basic-addon1"
-                    />
-                  </div>
+                  <InputGroup>
+                    <InputGroup.Text>Nombre Usuario</InputGroup.Text>
+                    <Form.Control type="text" placeholder="Nombre Apellido"/>
+                  </InputGroup>
                 </th>
+                <th className="text-center"> Estado</th>
               </tr>
             </thead>
             <tbody>
@@ -67,9 +60,9 @@ const BuscadorUsuario = () => {
                 <td className="text-center">---</td>
               </tr>
             </tbody>
-          </table>
-        </div>
-      </div>
+          </Table>
+        </Row>
+      </Container>
     </>
   );
 };

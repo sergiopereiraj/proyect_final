@@ -1,12 +1,12 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Table, Button } from "react-bootstrap";
 
 const SolicitudesUsuarios = () => {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <table striped bordered hover size="sm" className="table border">
+      <Container>
+        <Row>
+          <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
                 <th>Solicitudes Usuarios:</th>
@@ -16,137 +16,137 @@ const SolicitudesUsuarios = () => {
               <tr>
                 <td>Usuario1:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario2:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
-                <td >Usuario3:</td>
+                <td>Usuario3:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario4:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario5:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario6:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario7:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario8:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario9:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>Usuario10:</td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-success">
+                  <Button variant="success">
                     Acepta
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-center">
-                  <button type="button" class="btn btn-danger">
+                  <Button variant="danger">
                     Rechaza
-                  </button>
+                  </Button>
                 </td>
               </tr>
             </tbody>
-          </table>
-        </div>
-      </div>
+          </Table>
+        </Row>
+      </Container>
     </>
   );
 };

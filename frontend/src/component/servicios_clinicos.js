@@ -1,23 +1,25 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Form } from "react-bootstrap";
 
 const ServiciosClinicos = () => {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div classname="form-group">
-            <label htmlFor="exampleFormControlSelect1">
-              Seleccionar Servicio Clinico:
-            </label>
-            <select className="form-control" id="exampleFormControlSelect1">
-              <option>Procedimiento</option>
-              <option>Box Curaciones</option>
-              <option>Box Dental</option>
-            </select>
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Row>
+          <Form>
+            <Form.Group>
+              <Form.Label htmlFor="exampleFormControlSelect1">
+                Seleccionar Servicio Clinico:
+              </Form.Label>
+              <Form.Select className="form-control" id="exampleFormControlSelect1">
+                <option>Procedimiento</option>
+                <option>Box Curaciones</option>
+                <option>Box Dental</option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
+        </Row>
+      </Container>
     </>
   );
 };

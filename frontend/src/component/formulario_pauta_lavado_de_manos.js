@@ -1,12 +1,13 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Table, ProgressBar, Button } from "react-bootstrap";
+import BarraPorcentajeBoton from "./barra_porcentaje_boton_enviar";
 
 const FormularioLavado = () => {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <table striped bordered hover size="sm" className="table border">
+      <Container>
+        <Row>
+          <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
                 <th>Requisito</th>
@@ -111,27 +112,10 @@ const FormularioLavado = () => {
                 </td>
               </tr>
             </tbody>
-          </table>
-        </div>
-        <div className="row">
-          <div className="progress">
-            <div
-              className="progress-bar progress-bar-striped progress-bar-animated"
-              role="progressbar"
-              aria-valuenow={75}
-              aria-valuemin={0}
-              aria-valuemax={100}
-              style={{ width: "75%" }}
-            />
-          </div>
-        </div>
-        <button
-          type="button"
-          className="position-absolute top-50 start-50 btn btn-primary"
-        >
-          Enviar
-        </button>
-      </div>
+          </Table>
+        </Row>
+        <BarraPorcentajeBoton />
+      </Container>
     </>
   );
 };
