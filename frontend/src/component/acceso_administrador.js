@@ -2,7 +2,6 @@ import React from "react";
 import {
   Container,
   Row,
-  ProgressBar,
   Button,
   ButtonGroup,
 } from "react-bootstrap";

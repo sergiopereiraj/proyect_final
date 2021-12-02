@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Table, ProgressBar, Button } from "react-bootstrap";
+import { Container, Row, Table, Form } from "react-bootstrap";
 import BarraPorcentajeBoton from "./barra_porcentaje_boton_enviar";
 
 const FormularioLavado = () => {
@@ -19,95 +19,115 @@ const FormularioLavado = () => {
               <tr>
                 <td>Antes de tocar al Paciente</td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta1"
-                    id="flexRadioDefault1"
+                    value="false"
                   />
                 </td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta1"
-                    id="flexRadioDefault1"
+                    value="true"
                   />
                 </td>
               </tr>
               <tr>
                 <td>Antes de realizar una tarea aseptica</td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta2"
-                    id="flexRadioDefault1"
+                    value="false"
                   />
                 </td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta2"
-                    id="flexRadioDefault1"
+                    value="true"
                   />
                 </td>
               </tr>
               <tr>
                 <td>Después de riesgo de exposicion a líquido corporales</td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta3"
-                    id="flexRadioDefault1"
+                    value="false"
                   />
                 </td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta3"
-                    id="flexRadioDefault1"
+                    value="true"
                   />
                 </td>
               </tr>
               <tr>
                 <td>Después de tocar al paciente</td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta4"
-                    id="flexRadioDefault1"
+                    value="false"
                   />
                 </td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta4"
-                    id="flexRadioDefault1"
+                    value="true"
                   />
                 </td>
               </tr>
               <tr>
                 <td>Después de contacto con el entorno del paciente</td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta5"
-                    id="flexRadioDefault1"
+                    value="false"
                   />
                 </td>
                 <td className="text-center">
-                  <input
-                    className="form-check-input"
+                  <Form.Check
                     type="radio"
+                    id=""
+                    className="mb-2"
+                    label=""
                     name="pregunta5"
-                    id="flexRadioDefault1"
+                    value="true"
                   />
                 </td>
               </tr>
