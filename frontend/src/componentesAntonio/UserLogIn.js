@@ -1,29 +1,49 @@
-mport React from "react";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { Context } from "../store/AppContent";
 import MyModal from "./Modal";
 
 
-const UserLogIn = () => {
+
+
+const defaultValues = {
+    email: "",
+    input : "",
+
+};
+
+
+
+const UserLogin = () => {
+    const {store, actions} = useContext(Context);
+    const {onSubmit} = actions;
+    const { register, formState: { errors }, handleSubmit } = useForm({defaultValues:{
+        email: store.email,
+        password: store.password,
+    }});
+    
 
     return (
-
-        <form>
-            <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+        <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
+            <div className="col-md-12">
+                <label htmlFor="inputEmail4" className="form-label">Email</label>
+                <input {...register("email", { required: true, email: true, pattern: /^[A-Za-z0-9]$/i })} type="email" className={"form-control" + (errors.email?.type === 'required' ? " is-invalid" : "")} />
+                <div className="invalid-feedback">
+                    {errors.email?.type === 'required' && "Email es requerido"}
+                </div>
             </div>
-            <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" />
+            <div className="col-md-12">
+                <label htmlFor="inputPassword4" className="form-label">Password</label>
+                <input {...register("password", { required: true, minLength: 8,  maxLength: 12, pattern: /^[A-Za-z 0-9]+$/i })} type="password" className={"form-control" + (errors.password?.type === 'required' ? " is-invalid" : "")} />
+                <div className="invalid-feedback">
+                    {errors.password?.type === 'required' && "Password es requerido"}
+                </div>
             </div>
-            <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+            <div className="col-12">
+                <button type="submit" className="btn btn-primary">Sign in</button>
+                <MyModal />
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-            <MyModal />
         </form>
-
-    )
+    );
 }
-export default UserLogIn
+export default UserLogin;
