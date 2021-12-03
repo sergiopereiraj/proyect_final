@@ -3,7 +3,7 @@ from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import db
+from models import db, User
 
 
 app = Flask(__name__)
@@ -21,6 +21,13 @@ CORS(app)
 @app.route('/')
 def main():
     return render_template('index.html')
+
+@app.route('/api/users', methods=['GET'])
+def users():
+    if request.method == 'GET':
+        users= User.query.all()
+        users=list(map(lambda user: user.serialize_with_roles(),users))
+        return jsonify(users), 200
 
 if __name__ == '__main__':
     app.run()
