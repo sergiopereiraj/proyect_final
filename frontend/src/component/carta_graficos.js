@@ -12,7 +12,7 @@ const CartaGraficos = () => {
   return (
     <>
       <Container>
-        <Row>
+        <Row className="bg-white rounded">
           <SelectPautas />
           <CardGroup>
             <Card className="col-sm-4 h-50 d-inline-block">

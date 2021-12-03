@@ -18,13 +18,14 @@ import Login from "./views/Login";
 import UserLogin from "./componentesAntonio/UserLogIn";
 import NavsInicio from "./component/navs_inicio";
 import MyForm from "./componentesAntonio/Form";
+import NavsDirector from "./component/navs_director";
 
 const Layout = () => {
   return (
     <BrowserRouter>
-      <Navs />
+      <NavsDirector />
       <Switch>
-        <Route exact path="/" component={BuscadorUsuario} />
+        <Route exact path="/" component={ResultadosPautas} />
       </Switch>
       <Footer />
     </BrowserRouter>
