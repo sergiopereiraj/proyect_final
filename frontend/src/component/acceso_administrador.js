@@ -9,7 +9,7 @@ import {
 const AccesoAdministrador = () => {
   return (
     <Container>
-      <Row className="bg-white">
+      <Row className="bg-white m-5">
         <ButtonGroup vertical size="lg">
           <Button className="m-1">Registrar Usuario</Button>
           <br/>

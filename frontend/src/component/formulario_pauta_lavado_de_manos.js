@@ -6,7 +6,8 @@ const FormularioLavado = () => {
   return (
     <>
       <Container>
-        <Row className="bg-white">
+        <h1 className="text-center m-5">Supervision de Lavado de Manos</h1>
+        <Row className="bg-white m-5">
           <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
@@ -18,11 +19,11 @@ const FormularioLavado = () => {
             <tbody>
               <tr>
                 <td>Antes de tocar al Paciente</td>
-                <td className="text-center">
+                <td className="">
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta1"
                     value="true"
@@ -32,7 +33,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta1"
                     value="false"
@@ -46,7 +47,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta2"
                     value="true"
@@ -56,7 +57,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta2"
                     value="false"
@@ -70,7 +71,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta3"
                     value="true"
@@ -80,7 +81,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta3"
                     value="false"
@@ -94,7 +95,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta4"
                     value="true"
@@ -104,7 +105,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta4"
                     value="false"
@@ -118,7 +119,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta5"
                     value="true"
@@ -128,7 +129,7 @@ const FormularioLavado = () => {
                   <Form.Check
                     type="radio"
                     id=""
-                    className="mb-2"
+                    className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta5"
                     value="false"

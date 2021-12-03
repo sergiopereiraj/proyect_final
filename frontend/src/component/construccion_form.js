@@ -14,7 +14,7 @@ const ConstruccionFormulario = () => {
     <>
       <Container>
         <h1 className="text-center">Titulo Formulario</h1>
-        <Row className="bg-white">
+        <Row className="bg-white m-5">
           <Form>
             <Table striped bordered hover size="sm" className="table border">
               <thead>

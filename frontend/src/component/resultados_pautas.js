@@ -8,7 +8,7 @@ const ResultadosPautas = () => {
   return (
     <>
       <Container>
-        <Row  className="bg-white">
+        <Row  className="bg-white m-5 rounded">
           <h1 className="text-center">Mes</h1>
           <ServiciosClinicos />
           <SelectPautas/>

@@ -24,7 +24,11 @@ function NavsUsuario() {
               <Nav.Link href="#action1">Perfil</Nav.Link>
               <NavDropdown.Divider />
               <Nav.Link href="#action1">Acceso</Nav.Link>
-              <Nav.Link href="#action2">Pauta</Nav.Link>
+              <NavDropdown title="Pautas" id="offcanvasNavbarDropdown">
+            <NavDropdown.Item href="#action3">Lavado de Manos</NavDropdown.Item>
+            <NavDropdown.Item href="#action4">Eliminacion de Material Cortopunzante</NavDropdown.Item>
+            <NavDropdown.Item href="#action4">Almacenamiento de Material Esteril</NavDropdown.Item>
+          </NavDropdown>
               <Nav.Link href="#action3">Resultado</Nav.Link>
             </Nav>
           </Offcanvas.Body>

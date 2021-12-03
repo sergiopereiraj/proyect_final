@@ -5,7 +5,7 @@ const BuscadorUsuario = () => {
   return (
     <>
       <Container>
-        <Row className="bg-white">
+        <Row className="bg-white m-5">
           <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
@@ -20,43 +20,43 @@ const BuscadorUsuario = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Usuario1:</td>
+                <td>Antonio Bello</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario2:</td>
+                <td>Andres Valdivia</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario3:</td>
+                <td>Seginmundo Iturra</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario4:</td>
+                <td>Exequiel Gonzalez Cortez</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario5:</td>
+                <td>Emanuel Ginobili</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario6:</td>
+                <td>Facundo Campazzo</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario7:</td>
+                <td>Roberto Carlos</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario8:</td>
+                <td>Jason Kidd</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario9:</td>
+                <td>LeBron James</td>
                 <td className="text-center">---</td>
               </tr>
               <tr>
-                <td>Usuario10:</td>
+                <td>Lukas Doncic</td>
                 <td className="text-center">---</td>
               </tr>
             </tbody>

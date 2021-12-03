@@ -4,8 +4,7 @@ import { Button, Container } from "react-bootstrap";
 const Footer = () => {
   return (
     <>
-    <Container>
-      <footer className="bg-primary text-white d-flex justify-content-around fixed-bottom">
+      <footer className="bg-primary text-white d-flex justify-content-around">
         <div>
           <Button
             type="button"
@@ -41,7 +40,6 @@ const Footer = () => {
           </Button>
         </div>
       </footer>
-      </Container>
     </>
   );
 };

@@ -5,14 +5,13 @@ const BarraPorcentajeBoton = () => {
   return (
     <>
       <Container>
-        <br/>
-      <Row>
+      <Row className="m-5">
           <ProgressBar animated now={90} />
         </Row>
         <br/>
         <Row>
           {" "}
-          <Button className="mb-2">Enviar</Button>
+          <Button className="m-2">Enviar</Button>
         </Row>
       </Container>
     </>
