@@ -13,8 +13,8 @@ const ConstruccionFormulario = () => {
   return (
     <>
       <Container>
-        <p className="text-center">Titulo Formulario</p>
-        <Row>
+        <h1 className="text-center">Titulo Formulario</h1>
+        <Row className="bg-white">
           <Form>
             <Table striped bordered hover size="sm" className="table border">
               <thead>
@@ -34,7 +34,7 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta1"
-                      value="false"
+                      value="true"
                     />
                   </td>
                   <td className="text-center">
@@ -44,7 +44,8 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta1"
-                      value="true"
+                      value="false"
+                      checked
                     />
                   </td>
                 </tr>
@@ -57,7 +58,7 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta2"
-                      value="false"
+                      value="true"
                     />
                   </td>
                   <td className="text-center">
@@ -67,7 +68,8 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta2"
-                      value="true"
+                      value="false"
+                      checked
                     />
                   </td>
                 </tr>
@@ -80,7 +82,7 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta3"
-                      value="false"
+                      value="true"
                     />
                   </td>
                   <td className="text-center">
@@ -90,7 +92,8 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta3"
-                      value="true"
+                      value="false"
+                      checked
                     />
                   </td>
                 </tr>
@@ -103,7 +106,7 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta4"
-                      value="false"
+                      value="true"
                     />
                   </td>
                   <td className="text-center">
@@ -113,7 +116,8 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta4"
-                      value="true"
+                      value="false"
+                      checked
                     />
                   </td>
                 </tr>
@@ -126,7 +130,7 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta5"
-                      value="false"
+                      value="true"
                     />
                   </td>
                   <td className="text-center">
@@ -136,7 +140,8 @@ const ConstruccionFormulario = () => {
                       className="mb-2"
                       label=""
                       name="pregunta5"
-                      value="true"
+                      value="false"
+                      checked
                     />
                   </td>
                 </tr>

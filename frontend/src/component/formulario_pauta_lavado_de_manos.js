@@ -6,7 +6,7 @@ const FormularioLavado = () => {
   return (
     <>
       <Container>
-        <Row>
+        <Row className="bg-white">
           <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
@@ -25,7 +25,7 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta1"
-                    value="false"
+                    value="true"
                   />
                 </td>
                 <td className="text-center">
@@ -35,7 +35,8 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta1"
-                    value="true"
+                    value="false"
+                    checked
                   />
                 </td>
               </tr>
@@ -48,7 +49,7 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta2"
-                    value="false"
+                    value="true"
                   />
                 </td>
                 <td className="text-center">
@@ -58,7 +59,8 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta2"
-                    value="true"
+                    value="false"
+                    checked
                   />
                 </td>
               </tr>
@@ -71,7 +73,7 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta3"
-                    value="false"
+                    value="true"
                   />
                 </td>
                 <td className="text-center">
@@ -81,7 +83,8 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta3"
-                    value="true"
+                    value="false"
+                    checked
                   />
                 </td>
               </tr>
@@ -94,7 +97,7 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta4"
-                    value="false"
+                    value="true"
                   />
                 </td>
                 <td className="text-center">
@@ -104,7 +107,8 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta4"
-                    value="true"
+                    value="false"
+                    checked
                   />
                 </td>
               </tr>
@@ -117,7 +121,7 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta5"
-                    value="false"
+                    value="true"
                   />
                 </td>
                 <td className="text-center">
@@ -127,7 +131,8 @@ const FormularioLavado = () => {
                     className="mb-2"
                     label=""
                     name="pregunta5"
-                    value="true"
+                    value="false"
+                    checked
                   />
                 </td>
               </tr>

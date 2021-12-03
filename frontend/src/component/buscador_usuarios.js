@@ -5,7 +5,7 @@ const BuscadorUsuario = () => {
   return (
     <>
       <Container>
-        <Row>
+        <Row className="bg-white">
           <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
