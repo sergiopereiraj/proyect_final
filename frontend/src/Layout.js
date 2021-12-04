@@ -20,6 +20,8 @@ import NavsInicio from "./component/navs_inicio";
 import MyForm from "./componentesAntonio/Form";
 import NavsDirector from "./component/navs_director";
 import NavsUsuario from "./component/navs_usuario";
+import SupervisionCortopunzante from "./component/formulario_pauta_eliminacion_cortopunzante";
+import SupervisionMaterialEsteril from "./component/formulario_pauta_almacenamiento_m_esteril";
 
 const Layout = () => {
   return (
@@ -35,7 +37,9 @@ const Layout = () => {
         <Route exact path="/direct/resultados" component={ResultadosPautas} /> {/*vista director 2 */}
         <Route exact path="/direct/perfil" component={MyForm} /> {/*vista director 2 */}
         <Route exact path="/usuario/graficos-meses" component={CartaGraficos} /> {/*vista usuario 1 */}
-        <Route exact path="/usuario/formulario-supervision" component={FormularioLavado} /> {/*vista usuario 2 */}
+        <Route exact path="/usuario/supervision-lavado-manos" component={FormularioLavado} /> {/*vista usuario lavado de manos */}
+        <Route exact path="/usuario/supervision-cortopunante" component={SupervisionCortopunzante} /> {/*vista usuario cortopunzante */}
+        <Route exact path="/usuario/supervision-almacenamiento-material-esteril" component={SupervisionMaterialEsteril} /> {/*vista usuario cortopunzante */}
         <Route exact path="/usuario/resultado" component={ResultadosPautas} /> {/*vista usuario 3 */}
         <Route exact path="/usuario/perfil" component={MyForm} /> {/*vista usuario 4 */}
         <Route exact path="/login" component={UserLogin} /> {/* Ingreso al portal */}       
