@@ -54,7 +54,7 @@ class User(db.Model):
 
     def save(self):
         db.session.add(self)
-        deb.session.commit()
+        db.session.commit()
 
     def update(self):
         db.session.commit()
@@ -92,7 +92,7 @@ class Profile(db.Model):
 
     def save(self):
         db.session.add(self)
-        deb.session.commit()
+        db.session.commit()
 
     def update(self):
         db.session.commit()
@@ -124,7 +124,7 @@ class Role(db.Model):
         }
     def save(self):
         db.session.add(self)
-        deb.session.commit()
+        db.session.commit()
 
     def update(self):
         db.session.commit()
@@ -155,7 +155,7 @@ class Pauta(db.Model):
 
     def save(self):
         db.session.add(self)
-        deb.session.commit()
+        db.session.commit()
 
     def update(self):
         db.session.commit()
@@ -181,7 +181,7 @@ class Requerimiento(db.Model):
 
     def save(self):
         db.session.add(self)
-        deb.session.commit()
+        db.session.commit()
 
     def update(self):
         db.session.commit()
@@ -212,7 +212,7 @@ class Resultado(db.Model):
 
     def save(self):
         db.session.add(self)
-        deb.session.commit()
+        db.session.commit()
 
     def update(self):
         db.session.commit()
@@ -254,7 +254,7 @@ class Supervision(db.Model):
 
     def save(self):
         db.session.add(self)
-        deb.session.commit()
+        db.session.commit()
 
     def update(self):
         db.session.commit()
