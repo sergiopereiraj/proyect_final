@@ -2,7 +2,8 @@ const getState = ({getStore, getActions, setStore})=>{
 
     return{
         store:{
-            email: "antoniobellom14@gmail.com"
+            email: "",
+            password: "",
         },
         actions: {
             onSubmit: data => console.log({...data}),
