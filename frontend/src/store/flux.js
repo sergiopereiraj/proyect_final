@@ -5,7 +5,6 @@ const getState = ({getStore, getActions, setStore})=>{
 
             email: "",
             password: "",
-            email: ""
         },
         actions: {
             onSubmit: data => console.log({...data}),
