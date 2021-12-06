@@ -1,38 +1,28 @@
 import React from "react";
-import { Nav, Navbar, Container, Offcanvas, NavDropdown } from "react-bootstrap";
+import ReactDOM  from "react-dom";
+import MyForm from "../componentesAntonio/Form";
+import UserLogin from "../componentesAntonio/UserLogIn";
+import BuscadorUsuario from "./buscador_usuarios";
+import ConstruccionFormulario from "./construccion_form";
+import NavsAdmin from "./navs_admin";
+import NavsInicio from "./navs_inicio";
+import NavsUsuario from "./navs_usuario";
+import PerfilDirector from "./perfil_director";
+import SolicitudesUsuarios from "./solicitudes_usuarios";
 
-function Navs() {
-  const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
-
-  return (
-    <Navbar bg="primary" variant="dark" expand={false}>
-      <Container>
-        <Navbar.Brand href="#">
-          <i class="fas fa-laptop-medical"></i>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="offcanvasNavbar" />
-        <Navbar.Offcanvas
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-          placement="end"
-        >
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Perfil</Nav.Link>
-              <NavDropdown.Divider />
-              <Nav.Link href="#action1">Solicitudes de Usuarios</Nav.Link>
-              <Nav.Link href="#action2">Registro de Usuarios</Nav.Link>
-              <Nav.Link href="#action3">Perfiles de Usuarios</Nav.Link>
-              <Nav.Link href="#action4">Pautas de Supervisión</Nav.Link>
-            </Nav>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
-      </Container>
-    </Navbar>
-  );
-}
+const Navs = () => {
+    
+  if (<UserLogin /> === true) {
+    return <NavsInicio />;
+  } else if (
+    ((<SolicitudesUsuarios />),
+    (<MyForm />),
+    (<BuscadorUsuario />),
+    (<ConstruccionFormulario />),
+    <PerfilDirector /> === true)
+  ) {
+    return <NavsAdmin />;
+  } else return <NavsUsuario />;
+};
 
 export default Navs;
