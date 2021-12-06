@@ -5,16 +5,23 @@ const SolicitudesUsuarios = () => {
   return (
     <>
       <Container>
-        <Row>
+        <h1 className="text-center mt-3"> Solicitudes  Pendientes de Usuarios</h1>
+        <Row className="bg-white m-5">
           <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
-                <th>Solicitudes Usuarios:</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Rut</th>
+                <th>Tipo de Usuarios</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Usuario1:</td>
+                <td>Antonio</td>
+                <td>Bello</td>
+                <td>12.123.123-6</td>
+                <td>Administrador</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -27,7 +34,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario2:</td>
+                <td>Andres</td>
+                <td>Valdivia</td>
+                <td>12.123.123-6</td>
+                <td>Director</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -40,7 +50,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario3:</td>
+              <td>Oscar</td>
+                <td>Schmidt</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -53,7 +66,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario4:</td>
+              <td>Greivis</td>
+                <td>Vasquez</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -66,7 +82,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario5:</td>
+              <td>Jason</td>
+                <td>Kidd</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -79,7 +98,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario6:</td>
+              <td>Emanuel</td>
+                <td>Ginobili</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -92,7 +114,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario7:</td>
+              <td>Facundo</td>
+                <td>Campazzo</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -105,7 +130,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario8:</td>
+              <td>Lukas</td>
+                <td>Doncic</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -118,7 +146,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario9:</td>
+              <td>LeBron James</td>
+                <td>Valdivia</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -131,7 +162,10 @@ const SolicitudesUsuarios = () => {
                 </td>
               </tr>
               <tr>
-                <td>Usuario10:</td>
+              <td>Hal</td>
+                <td>Horford</td>
+                <td>12.123.123-6</td>
+                <td>Usuario</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta

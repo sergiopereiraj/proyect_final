@@ -2,11 +2,13 @@ import React from "react";
 import { Container, Row, Table, Form } from "react-bootstrap";
 import BarraPorcentajeBoton from "./barra_porcentaje_boton_enviar";
 
-const FormularioLavado = () => {
+const SupervisionCortopunzante = () => {
   return (
     <>
       <Container>
-        <h1 className="text-center m-5">Supervision de Lavado de Manos</h1>
+        <h1 className="text-center m-5">
+          Supervision Eliminacion Correcta Material Cortopunzante
+        </h1>
         <Row className="bg-white m-5">
           <Table striped bordered hover size="sm" className="table border">
             <thead>
@@ -18,7 +20,9 @@ const FormularioLavado = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Antes de tocar al Paciente</td>
+                <td>
+                  Caja de cortopunzante presenta solo objetos cortopunzante
+                </td>
                 <td className="">
                   <Form.Check
                     type="radio"
@@ -42,7 +46,10 @@ const FormularioLavado = () => {
                 </td>
               </tr>
               <tr>
-                <td>Antes de realizar una tarea aseptica</td>
+                <td>
+                  Desechos dentro de caja cortopunzante no sobrepasa tres
+                  cuartos de su capacidad
+                </td>
                 <td className="text-center">
                   <Form.Check
                     type="radio"
@@ -66,7 +73,7 @@ const FormularioLavado = () => {
                 </td>
               </tr>
               <tr>
-                <td>Después de riesgo de exposicion a líquido corporales</td>
+                <td>Caja de cortopunzante ubicada en área sucia.</td>
                 <td className="text-center">
                   <Form.Check
                     type="radio"
@@ -90,7 +97,7 @@ const FormularioLavado = () => {
                 </td>
               </tr>
               <tr>
-                <td>Después de tocar al paciente</td>
+                <td>Se tiene pinzas para retiro de aguja de jeringa</td>
                 <td className="text-center">
                   <Form.Check
                     type="radio"
@@ -108,30 +115,6 @@ const FormularioLavado = () => {
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta4"
-                    value="false"
-                    checked
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Después de contacto con el entorno del paciente</td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta5"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta5"
                     value="false"
                     checked
                   />
@@ -146,4 +129,4 @@ const FormularioLavado = () => {
   );
 };
 
-export default FormularioLavado;
+export default SupervisionCortopunzante;

@@ -5,7 +5,7 @@ const BotonesMeses = () => {
   return (
     <>
       <Container>
-        <Row>
+        <Row className="m-5">
           <ButtonGroup size="lg" className="mb-2">
             <Button className="m-1">Enero</Button>
             <Button className="m-1">Febrero</Button>
