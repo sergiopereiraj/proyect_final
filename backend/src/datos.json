@@ -1,0 +1,11 @@
+{
+    "roles":[
+        {
+            "id": 1,
+            "name": "Admin",
+            "users":[
+                {"id": 1, "usuario": "23.333.333-3", "active": true }
+            ]
+        }
+    ]
+}
