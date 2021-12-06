@@ -12,7 +12,7 @@ const ServiciosClinicos = () => {
                 Seleccionar Servicio Clinico:
               </Form.Label>
               <Form.Select className="form-control" id="exampleFormControlSelect1">
-                <option>Procedimiento</option>
+                <option>Box Procedimiento</option>
                 <option>Box Curaciones</option>
                 <option>Box Dental</option>
               </Form.Select>

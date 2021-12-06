@@ -42,7 +42,7 @@ const Layout = () => {
         <Route exact path="/direct/perfil" component={PerfilDirector} /> {/*vista director 2 */}
         <Route exact path="/usuario/graficos-meses" component={CartaGraficos} /> {/*vista usuario 1 */}
         <Route exact path="/usuario/supervision-lavado-manos" component={FormularioLavado} /> {/*vista usuario lavado de manos */}
-        <Route exact path="/usuario/supervision-cortopunzante" component={SupervisionCortopunzante} /> {/*vista usuario cortopunzante */}
+        <Route exact path="/usuario/supervision-cortopunante" component={SupervisionCortopunzante} /> {/*vista usuario cortopunzante */}
         <Route exact path="/usuario/supervision-almacenamiento-material-esteril" component={SupervisionMaterialEsteril} /> {/*vista usuario cortopunzante */}
         <Route exact path="/usuario/resultado" component={ResultadosPautas} /> {/*vista usuario 3 */}
         <Route exact path="/usuario/perfil" component={PerfilUsuario} /> {/*vista usuario 4 */}

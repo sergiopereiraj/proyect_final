@@ -1,5 +1,12 @@
-import React from "react";
-import { Nav, Navbar, Container, Offcanvas, NavDropdown } from "react-bootstrap";
+import React, { useContext } from "react";
+import {
+  Nav,
+  Navbar,
+  Container,
+  Offcanvas,
+  NavDropdown,
+} from "react-bootstrap";
+import { Context } from "../store/AppContent";
 
 function NavsUsuario() {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
@@ -25,10 +32,16 @@ function NavsUsuario() {
               <NavDropdown.Divider />
               <Nav.Link href="#action1">Acceso</Nav.Link>
               <NavDropdown title="Pautas" id="offcanvasNavbarDropdown">
-            <NavDropdown.Item href="#action3">Lavado de Manos</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Eliminacion de Material Cortopunzante</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Almacenamiento de Material Esteril</NavDropdown.Item>
-          </NavDropdown>
+                <NavDropdown.Item href="#action3">
+                  Lavado de Manos
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Eliminacion de Material Cortopunzante
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Almacenamiento de Material Esteril
+                </NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link href="#action3">Resultado</Nav.Link>
             </Nav>
           </Offcanvas.Body>

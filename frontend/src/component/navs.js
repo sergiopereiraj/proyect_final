@@ -9,15 +9,17 @@ import NavsUsuario from "./navs_usuario";
 import PerfilDirector from "./perfil_director";
 import SolicitudesUsuarios from "./solicitudes_usuarios";
 import { Context } from "../store/AppContent";
+import NavsDirector from "./navs_director";
 
 const Navs = () => {
   const { store, actions } = useContext(Context);
-  if (store.currentUser.user.role[0].name === "Usuario") {
+  
+  if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "Usuario")) {
     return <NavsUsuario />;
-  } else if (store.currentUser.user.role[0].name === "Admin") {
+  } else if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "Admin")) {
     return <NavsAdmin />;
-  } else if (store.currentUser.user.role[0].name === "Director") {
-    return <NavsAdmin />;
+  } else if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "Director")) {
+    return <NavsDirector />;
   } else return <NavsInicio />;
 };
 

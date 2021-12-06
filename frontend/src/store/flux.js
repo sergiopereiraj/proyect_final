@@ -12,7 +12,7 @@ const getState = ({getStore, getActions, setStore})=>{
                     profile: {},
                     role: [{
                         id: 1,
-                        name: "Usuario"
+                        name: "Admin"
                     }]
                 }
             }
