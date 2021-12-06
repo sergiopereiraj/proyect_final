@@ -7,9 +7,61 @@ db=SQLAlchemy()
 class User(db.Model):
     __tablename__ = "users"
     id= db.Column(db.Integer, primary_key=True)
-    usuario= db.Column(db.String(200), unique=True)
+    rut= db.Column(db.String(200), unique=True)
     password= db.Column(db.String(200))
     active = db.Column(db.Boolean, default=True)
+    roles= db.relationship('Role', secondary='roles_users')
+    profile= db.relationship('Profile', backref='user', uselist=False)
+    supervisiones=db.relationship('Supervision', backref='user')
+
+    def serialize(self):
+        return{
+            "id":self.id,
+            "rut":self.rut,
+            "active":self.active,
+            "profile":{
+                "names":self.profile.names,
+                "mother_lastname":self.profile.mother_lastname,
+                "father_lastname":self.profile.father_lastname,
+                "rut":self.profile.rut,
+                "region":self.profile.region,
+                "email":self.profile.email,
+                "rol":self.profile.rol,
+                "phone":self.profile.phone
+            }
+        }
+    
+    def serialize_with_roles(self):
+        return{
+            "id":self.id,
+            "rut":self.rut,
+            "active":self.active,
+            "roles":self.get_roles(),
+            "profile":{
+                "names":self.profile.names,
+                "mother_lastname":self.profile.mother_lastname,
+                "father_lastname":self.profile.father_lastname,
+                "rut":self.profile.rut,
+                "region":self.profile.region,
+                "email":self.profile.email,
+                "rol":self.profile.rol,
+                "phone":self.profile.phone
+            }
+        }
+
+    def get_roles(self):
+        return list(map(lambda role: role.serialize(), self.roles))
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
 class Profile(db.Model):
     __tablename__ = "profiles"
@@ -25,10 +77,61 @@ class Profile(db.Model):
     phone= db.Column(db.String(200))
     user_id= db.Column(db.Integer, db.ForeignKey('users.id'))
 
+    def serialize(self):
+        return{
+            "id":self.id,
+            "names":self.names,
+            "mother_lastname":self.mother_lastname,
+            "father_lastname":self.father_lastname,
+            "rut":self.rut,
+            "region":self.region,
+            "email":self.email,
+            "rol":self.rol,
+            "phone":self.phone
+        }
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 class Role(db.Model):
     __tablename__ = "roles"
     id= db.Column(db.Integer, primary_key=True)
     name= db.Column(db.String(200), nullable= False, unique=True)
+    users= db.relationship('User', secondary='roles_users', backref='role')
+
+    def serialize(self):
+        return{
+            "id":self.id,
+            "name":self.name,
+        }
+
+    def get_users(self):
+        return list(map(lambda user: user.serialize(),self.users))
+    
+    def serialize_with_users(self):
+        return{
+            "id":self.id,
+            "name":self.name,
+            "users": []
+        }
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
 class RoleUser(db.Model):
     __tablename__ = "roles_users"
@@ -39,27 +142,124 @@ class Pauta(db.Model):
     __tablename__= "pautas"
     id= db.Column(db.Integer, primary_key=True)
     categoria= db.Column(db.String(200), unique=True)
+    supervision_id= db.Column(db.Integer,db.ForeignKey('supervisiones.id'), primary_key=True)
+
+    def serialize(self):
+        return{
+            "id":self.id,
+            "categoria":self.categoria.serialize(),
+            "supervision_id":self.supervision_id
+        }
+
+
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
 class Requerimiento(db.Model):
     __tablename__= "requerimientos"
     id= db.Column(db.Integer, primary_key=True)
-    texto= db.Column(db.Text(500))
+    content= db.Column(db.Text(500))
     seleccion= db.Column(db.Boolean, default=False)
     pauta_id= db.Column(db.Integer, db.ForeignKey('pautas.id'))
+
+    def serialize(self):
+        return{
+            "id":self.id,
+            "content":self.content,
+            "seleccion":self.seleccion,
+            "pauta_id":self.pauta_id
+        }
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
 class Resultado(db.Model):
     __tablename__= "resultados"
     id= db.Column(db.Integer, primary_key=True)
-    texto= db.Column(db.Text(500))
-    created_at= db.Column(db.DateTime, datetime.datetime.utcnow)
+    title=db.Column(db.String(250), nullable=False, unique=True)
+    content= db.Column(db.Text(500))
+    created_at= db.Column(db.DateTime, default=datetime.datetime.utcnow)
     supervision_id= db.Column(db.Integer, db.ForeignKey('supervisiones.id'))
     requerimiento_id= db.Column(db.Integer, db.ForeignKey('requerimientos.id'))
+
+    def serialize(self):
+        return{
+            "id":self.id,
+            "title":self.id,
+            "content":self.content,
+            "image":self.image,
+            "created_at":self.created_at,
+            "supervision_id":self.supervision_id,
+            "requerimiento_id":self.requerimiento_id
+        }
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
 class Supervision(db.Model):
     __tablename__= "supervisiones"
     id= db.Column(db.Integer, primary_key=True)
-    text= db.Column(db.Text(500))
+    content= db.Column(db.Text(500))
+    title= db.Column(db.String(500))
     created_at= db.Column(db.DateTime, default=datetime.datetime.utcnow)
-    pauta_id= db.Column(db.Integer, db.ForeignKey('pautas.id'))
     user_id= db.Column(db.Integer, db.ForeignKey('users.id'))
+    pautas= db.relationship('Pauta', backref='supervision')
+    resultados= db.relationship('Resultado', backref='supervision')
+
+    def serialize(self):
+        return{
+            "id":self.id,
+            "title":self.title.serialize(),
+            "content":self.content,
+            "created_at":self.created_at,
+            "user_id":self.user_id
+        }
+
+    def serialize_with_resultados(self):
+        return{
+            "id":self.id,
+            "title":self.title.serialize(),
+            "content":self.content,
+            "created_at":self.created_at,
+            "user_id":self.user_id,
+            "resultados": list(map(lambda resultado: resultado.serialize(), self.resultados))
+        }
+
+
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
