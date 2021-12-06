@@ -2,6 +2,11 @@ const getState = ({getStore, getActions, setStore})=>{
 
     return{
         store:{
+<<<<<<< HEAD
+
+            email: "",
+            password: "",
+=======
             email: "", 
             currentUser: {
                 access_token: "",
@@ -16,6 +21,7 @@ const getState = ({getStore, getActions, setStore})=>{
                     }]
                 }
             }
+>>>>>>> 7a7c1662994745f8085c8cd91a756628891969a0
         },
         actions: {
             onSubmit: data => console.log({...data}),

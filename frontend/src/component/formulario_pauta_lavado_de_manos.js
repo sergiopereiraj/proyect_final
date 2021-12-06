@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Container, Row, Table, Form } from "react-bootstrap";
 import BarraPorcentajeBoton from "./barra_porcentaje_boton_enviar";
 
 const FormularioLavado = () => {
+
+  const progressChild = useRef();
+
+  const [bool1, setBool1] = useState(false);
+  const [bool2, setBool2] = useState(false);
+  const [bool3, setBool3] = useState(false);
+  const [bool4, setBool4] = useState(false);
+  const [bool5, setBool5] = useState(false);
+
+  
+
   return (
     <>
       <Container>
@@ -13,7 +24,6 @@ const FormularioLavado = () => {
               <tr>
                 <th>Requisito</th>
                 <th className="text-center">Cumple</th>
-                <th className="text-center">No Cumple</th>
               </tr>
             </thead>
             <tbody>
@@ -21,23 +31,22 @@ const FormularioLavado = () => {
                 <td>Antes de tocar al Paciente</td>
                 <td className="">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta1"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta1"
-                    value="false"
-                    checked
+                    value={bool1}
+                    onChange={() => {
+                      if (!bool1) {
+                        console.log("addProgress");
+                        progressChild.current.addToProgress(20);
+                      } else {
+                        console.log("removeProgress");
+                        progressChild.current.removeFromProgress(20);
+                      }
+                      setBool1(!bool1);
+                    }}
                   />
                 </td>
               </tr>
@@ -45,23 +54,20 @@ const FormularioLavado = () => {
                 <td>Antes de realizar una tarea aseptica</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta2"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta2"
-                    value="false"
-                    checked
+                    value={bool2}
+                    onChange={() => {
+                      if (!bool2) {
+                        progressChild.current.addToProgress(20);
+                      } else {
+                        progressChild.current.removeFromProgress(20);
+                      }
+                      setBool2(!bool2);
+                    }}
                   />
                 </td>
               </tr>
@@ -69,23 +75,20 @@ const FormularioLavado = () => {
                 <td>Después de riesgo de exposicion a líquido corporales</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta3"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta3"
-                    value="false"
-                    checked
+                    value={bool3}
+                    onChange={() => {
+                      if (!bool3) {
+                        progressChild.current.addToProgress(20);
+                      } else {
+                        progressChild.current.removeFromProgress(20);
+                      }
+                      setBool3(!bool3);
+                    }}
                   />
                 </td>
               </tr>
@@ -93,23 +96,20 @@ const FormularioLavado = () => {
                 <td>Después de tocar al paciente</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta4"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta4"
-                    value="false"
-                    checked
+                    value={bool4}
+                    onChange={() => {
+                      if (!bool4) {
+                        progressChild.current.addToProgress(20);
+                      } else {
+                        progressChild.current.removeFromProgress(20);
+                      }
+                      setBool4(!bool4);
+                    }}
                   />
                 </td>
               </tr>
@@ -117,30 +117,27 @@ const FormularioLavado = () => {
                 <td>Después de contacto con el entorno del paciente</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta5"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta5"
-                    value="false"
-                    checked
+                    value={bool5}
+                    onChange={() => {
+                      if (!bool5) {
+                        progressChild.current.addToProgress(20);
+                      } else {
+                        progressChild.current.removeFromProgress(20);
+                      }
+                      setBool5(!bool5);
+                    }}
                   />
                 </td>
               </tr>
             </tbody>
           </Table>
         </Row>
-        <BarraPorcentajeBoton />
+        <BarraPorcentajeBoton ref={progressChild}/>
       </Container>
     </>
   );

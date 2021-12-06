@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Container, Row, Table, Form } from "react-bootstrap";
 import BarraPorcentajeBoton from "./barra_porcentaje_boton_enviar";
 
 const SupervisionMaterialEsteril = () => {
+  const progressChild = useRef()
+
+  const [ question1, setQuestion1] = useState(false)
+  const [ question2, setQuestion2] = useState(false)
+  const [ question3, setQuestion3] = useState(false)
+  const [ question4, setQuestion4] = useState(false)
+  const [ question5, setQuestion5] = useState(false)
+  const [ question6, setQuestion6] = useState(false)
+
   return (
     <>
       <Container>
@@ -13,7 +22,6 @@ const SupervisionMaterialEsteril = () => {
               <tr>
                 <th>Requisito</th>
                 <th className="text-center">Cumple</th>
-                <th className="text-center">No Cumple</th>
               </tr>
             </thead>
             <tbody>
@@ -21,23 +29,20 @@ const SupervisionMaterialEsteril = () => {
                 <td>Superficie estantería y repisa esta limpio</td>
                 <td className="">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta1"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta1"
-                    value="false"
-                    checked
+                    value={question1}
+                    onChange={()=>{
+                      if(!question1){
+                        progressChild.current.addToProgress(17)
+                      }else{
+                        progressChild.current.removeFromProgress(17);
+                      }
+                      setQuestion1(!question1)
+                    }}
                   />
                 </td>
               </tr>
@@ -45,23 +50,20 @@ const SupervisionMaterialEsteril = () => {
                 <td>Material está con fecha esterilidad vigente</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta2"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta2"
-                    value="false"
-                    checked
+                    value={question2}
+                    onChange={()=>{
+                      if(!question2){
+                        progressChild.current.addToProgress(17);
+                      }else{
+                        progressChild.current.removeFromProgress(17);
+                      }
+                      setQuestion2(!question2)
+                    }}
                   />
                 </td>
               </tr>
@@ -69,23 +71,20 @@ const SupervisionMaterialEsteril = () => {
                 <td>El material esta ordenado de forma holgada</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta3"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta3"
-                    value="false"
-                    checked
+                    value={question3}
+                    onChange={()=>{
+                      if(!question3){
+                        progressChild.current.addToProgress(17);
+                      }else{
+                        progressChild.current.removeFromProgress(17);
+                      }
+                      setQuestion3(!question3)
+                    }}
                   />
                 </td>
               </tr>
@@ -93,23 +92,21 @@ const SupervisionMaterialEsteril = () => {
                 <td>Material se encuentra ordenado segun fecha de caducidad</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta4"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta4"
-                    value="false"
-                    checked
+                    value={question4}
+                    onChange={()=>{
+                      if(!question4){
+                        progressChild.current.addToProgress(17);
+                      }else{
+                        progressChild.current.removeFromProgress(17);
+                      }
+                      setQuestion4(!question4)
+                    }}
+                  
                   />
                 </td>
               </tr>
@@ -117,23 +114,20 @@ const SupervisionMaterialEsteril = () => {
                 <td>Material esta almacenado a 30cm del suelo y 1 metro del suelo</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta5"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta5"
-                    value="false"
-                    checked
+                    value={question5}
+                    onChange={()=>{
+                      if(!question5){
+                        progressChild.current.addToProgress(17);
+                      }else{
+                        progressChild.current.removeFromProgress(17);
+                      }
+                      setQuestion5(!question5)
+                    }}
                   />
                 </td>
               </tr>
@@ -141,30 +135,27 @@ const SupervisionMaterialEsteril = () => {
                 <td>Material estéril esta sin mezclar con otros materiales</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta6"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta6"
-                    value="false"
-                    checked
+                    value={question6}
+                    onChange={()=>{
+                      if(!question6){
+                        progressChild.current.addToProgress(17);
+                      }else{
+                        progressChild.current.removeFromProgress(17);
+                      }
+                      setQuestion6(!question6)
+                    }}
                   />
                 </td>
               </tr>
             </tbody>
           </Table>
         </Row>
-        <BarraPorcentajeBoton />
+        <BarraPorcentajeBoton ref={progressChild} />
       </Container>
     </>
   );
