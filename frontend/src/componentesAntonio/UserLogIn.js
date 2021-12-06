@@ -26,12 +26,12 @@ const UserLogin = () => {
   return (
     <Container>
       <Row className="bg-white rounded m-5">
-        <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
+        <Form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12">
-            <label htmlFor="inputEmail4" className="form-label">
+            <Form.Label htmlFor="inputEmail4" className="form-label">
               Email
-            </label>
-            <input
+            </Form.Label>
+            <Form.Control
               {...register("email", {
                 required: true,
                 email: true,
@@ -48,10 +48,10 @@ const UserLogin = () => {
             </div>
           </div>
           <div className="col-md-12">
-            <label htmlFor="inputPassword4" className="form-label">
+            <Form.Label htmlFor="inputPassword4" className="form-label">
               Password
-            </label>
-            <input
+            </Form.Label>
+            <Form.Control
               {...register("password", {
                 required: true,
                 minLength: 8,
@@ -74,7 +74,7 @@ const UserLogin = () => {
             </Button>
             <MyModal />
           </div>
-        </form>
+        </Form>
       </Row>
     </Container>
   );
