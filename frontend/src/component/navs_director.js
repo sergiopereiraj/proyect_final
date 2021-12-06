@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, Navbar, Container, Offcanvas, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function NavsDirector() {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
@@ -7,7 +8,7 @@ function NavsDirector() {
   return (
     <Navbar bg="primary" variant="dark" expand={false}>
       <Container>
-        <Navbar.Brand href="#">
+      <Navbar.Brand to="/" as={Link}>
           <i class="fas fa-laptop-medical"></i>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -21,7 +22,7 @@ function NavsDirector() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Perfil</Nav.Link>
+              <Nav.Link ><Link to="/direct/perfil" className="text-decoration-none">Perfil</Link></Nav.Link>
               <NavDropdown.Divider />
             </Nav>
           </Offcanvas.Body>

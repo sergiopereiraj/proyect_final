@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Container, Row, Table, Form } from "react-bootstrap";
 import BarraPorcentajeBoton from "./barra_porcentaje_boton_enviar";
 
 const SupervisionCortopunzante = () => {
+  
+  
+  const progressChild = useRef();
+
+  const [ question1, setQuestion1 ] = useState(false)
+  const [ question2, setQuestion2 ] = useState(false)
+  const [ question3, setQuestion3 ] = useState(false)
+  const [ question4, setQuestion4 ] = useState(false)
+
   return (
     <>
       <Container>
@@ -15,7 +24,6 @@ const SupervisionCortopunzante = () => {
               <tr>
                 <th>Requisito</th>
                 <th className="text-center">Cumple</th>
-                <th className="text-center">No Cumple</th>
               </tr>
             </thead>
             <tbody>
@@ -25,23 +33,21 @@ const SupervisionCortopunzante = () => {
                 </td>
                 <td className="">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta1"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta1"
-                    value="false"
-                    checked
+                    value={question1}
+                    onChange={()=>{
+                      if(!question1){
+                        progressChild.current.addToProgress(25);
+                      }else{
+                        progressChild.current.removeFromProgress(25);
+                        }
+                        setQuestion1(!question1)
+                      }
+                    }
                   />
                 </td>
               </tr>
@@ -52,23 +58,21 @@ const SupervisionCortopunzante = () => {
                 </td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta2"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta2"
-                    value="false"
-                    checked
+                    value={question2}
+                    onChange={()=>{
+                      if(!question2){
+                        progressChild.current.addToProgress(25);
+                      }else{
+                        progressChild.current.removeFromProgress(25);
+                        }
+                        setQuestion2(!question2)
+                      }
+                    }
                   />
                 </td>
               </tr>
@@ -76,23 +80,20 @@ const SupervisionCortopunzante = () => {
                 <td>Caja de cortopunzante ubicada en área sucia.</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta3"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta3"
-                    value="false"
-                    checked
+                    value={question3}
+                    onChange={()=>{
+                      if(!question3){
+                        progressChild.current.addToProgress(25);
+                      }else{
+                        progressChild.current.removeFromProgress(25);
+                      }
+                      setQuestion3(!question3)
+                    }}
                   />
                 </td>
               </tr>
@@ -100,30 +101,27 @@ const SupervisionCortopunzante = () => {
                 <td>Se tiene pinzas para retiro de aguja de jeringa</td>
                 <td className="text-center">
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     id=""
                     className="d-flex justify-content-center mb-2"
                     label=""
                     name="pregunta4"
-                    value="true"
-                  />
-                </td>
-                <td className="text-center">
-                  <Form.Check
-                    type="radio"
-                    id=""
-                    className="d-flex justify-content-center mb-2"
-                    label=""
-                    name="pregunta4"
-                    value="false"
-                    checked
+                    value={question4}
+                    onChange={()=>{
+                      if(!question4){
+                        progressChild.current.addToProgress(25);
+                      }else{
+                        progressChild.current.removeFromProgress(25);
+                      }
+                      setQuestion4(!question4)
+                    }}
                   />
                 </td>
               </tr>
             </tbody>
           </Table>
         </Row>
-        <BarraPorcentajeBoton />
+        <BarraPorcentajeBoton ref={progressChild}/>
       </Container>
     </>
   );

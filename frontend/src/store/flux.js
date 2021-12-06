@@ -2,7 +2,8 @@ const getState = ({getStore, getActions, setStore})=>{
 
     return{
         store:{
-            email: "", 
+            email: "",
+            password: "",
             currentUser: {
                 access_token: "",
                 user: {

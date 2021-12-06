@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../componentesAntonio/Footer';
-import Navbar from '../componentesAntonio/Navbar';
+import Footer from '../component/footer';
+import Navs from '../component/navs';
 import UserLogIn from '../componentesAntonio/UserLogIn';
 
 
@@ -8,7 +8,7 @@ import UserLogIn from '../componentesAntonio/UserLogIn';
 function Login() {
   return (
     <>
-    <Navbar />
+    <Navs />
     <div className="container">
     <UserLogIn />
     </div>
