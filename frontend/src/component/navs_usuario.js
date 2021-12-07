@@ -28,7 +28,7 @@ function NavsUsuario() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Perfil</Nav.Link>
+              <Nav.Link href="#action1"><Link className="text-decoration-none" to="/usuario/perfil">Perfil</Link></Nav.Link>
               <NavDropdown.Divider />
               <Nav.Link>
                 <Link className="text-decoration-none" to="/usuario/graficos-meses">
@@ -63,7 +63,6 @@ function NavsUsuario() {
                   </Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#action3">Resultado</Nav.Link>
               <Nav.Link>
                 <Link to="/usuario/resultado" className="text-decoration-none">
                   Resultado

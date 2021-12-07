@@ -13,8 +13,7 @@ const CartaGraficos = () => {
     <>
       <Container>
         <Row className="bg-white rounded m-5">
-          <SelectPautas />
-          <CardGroup>
+          <CardGroup className="mt-3">
             <Card className="col-sm-4 h-50 d-inline-block">
               <Card.Img                
                 src="https://picsum.photos/id/237/1700/1800"
@@ -41,7 +40,7 @@ const CartaGraficos = () => {
               />
               <Card.Body>
                 <Card.Title>
-                  Porcentaje Cumplimiento Lavado de Manos Global por meses
+                Porcentaje Cumplimiento Eliminación de cortopunzante Global por meses
                 </Card.Title>
                 <Card.Text>
                   This is a wider card with supporting text below as a natural
@@ -60,7 +59,7 @@ const CartaGraficos = () => {
               />
               <Card.Body>
                 <Card.Title>
-                  Porcentaje Cumplimiento Lavado de Manos Global por meses
+                Porcentaje Cumplimiento Almacenamiento de Material Estéril Global por meses
                 </Card.Title>
                 <Card.Text>
                   This is a wider card with supporting text below as a natural

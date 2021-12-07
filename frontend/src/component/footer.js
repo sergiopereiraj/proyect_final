@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-primary text-white d-flex justify-content-around fixed-bottom">
+      <footer className="bg-primary text-white d-flex justify-content-around fixed-bottom mt-5">
         <div>
           <Button
             type="button"
