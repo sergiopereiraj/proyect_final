@@ -26,7 +26,7 @@ const Contacto = () => {
   return (
     <Container>
       <Row className="bg-white rounded m-5">
-          <h3 className="ms-3 mt-3">Por Favor complete formulario:</h3>
+          <h3 className="ms-3 mt-3">Por Favor complete el formulario:</h3>
         <Form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12">
             <Form.Label htmlFor="inputCity" className="form-label">

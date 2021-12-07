@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, NavLink } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,14 +10,15 @@ const Footer = () => {
           <Button
             type="button"
             className="btn btn-primary btn-lg btn-floating mx-2"
-          >
-            Contactanos
+            
+          ><Link className="text-decoration-none text-white" to="/contacto">
+            Contactanos</Link>
           </Button>
           <Button
             type="button"
             className="btn btn-primary btn-lg btn-floating mx-2"
-          >
-            Sobre Nosotros
+          ><Link className="text-decoration-none text-white" to="/sobre-nosotros">
+            Sobre Nosotros</Link>
           </Button>
         </div>
         <div className="">

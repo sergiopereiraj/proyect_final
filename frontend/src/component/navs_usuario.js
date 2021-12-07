@@ -15,7 +15,7 @@ function NavsUsuario() {
     <Navbar bg="primary" variant="dark" expand={false}>
       <Container>
         <Navbar.Brand to="/" as={Link}>
-          <i class="fas fa-laptop-medical"></i>
+          <Link className="text-decoration-none text-white" to="/usuario/graficos-meses"><i class="fas fa-laptop-medical"></i></Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
@@ -31,7 +31,7 @@ function NavsUsuario() {
               <Nav.Link href="#action1">Perfil</Nav.Link>
               <NavDropdown.Divider />
               <Nav.Link>
-                <Link className="text-decoration-none" to="/usuario/perfil">
+                <Link className="text-decoration-none" to="/usuario/graficos-meses">
                   Acceso
                 </Link>
               </Nav.Link>

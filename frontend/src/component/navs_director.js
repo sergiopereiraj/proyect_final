@@ -9,7 +9,7 @@ function NavsDirector() {
     <Navbar bg="primary" variant="dark" expand={false}>
       <Container>
       <Navbar.Brand to="/" as={Link}>
-          <i class="fas fa-laptop-medical"></i>
+      <Link className="text-decoration-none text-white" to="/direct/graficos-meses"><i class="fas fa-laptop-medical"></i></Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
