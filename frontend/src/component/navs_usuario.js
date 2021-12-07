@@ -64,7 +64,6 @@ function NavsUsuario() {
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="#action3">Resultado</Nav.Link>
-
               <Nav.Link>
                 <Link to="/usuario/resultado" className="text-decoration-none">
                   Resultado

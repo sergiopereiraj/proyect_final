@@ -26,6 +26,8 @@ import PerfilAdmin from "./component/perfil_admin";
 import PerfilDirector from "./component/perfil_director";
 import PerfilUsuario from "./component/perfil_usuario";
 import Navs from "./component/navs";
+import Contacto from "./component/contacto";
+import SobreNosotros from "./component/sobre_nosotros";
 
 const Layout = () => {
   return (
@@ -46,7 +48,9 @@ const Layout = () => {
         <Route exact path="/usuario/supervision-almacenamiento-material-esteril" component={SupervisionMaterialEsteril} /> {/*vista usuario cortopunzante */}
         <Route exact path="/usuario/resultado" component={ResultadosPautas} /> {/*vista usuario 3 */}
         <Route exact path="/usuario/perfil" component={PerfilUsuario} /> {/*vista usuario 4 */}
-        <Route exact path="/login" component={UserLogin} /> {/* Ingreso al portal */}       
+        <Route exact path="/login" component={UserLogin} /> {/* Ingreso al portal */}    
+        <Route exact path="/contacto" component={Contacto} /> {/* Ingreso al portal */}   
+        <Route exact path="/sobre-nosotros" component={SobreNosotros} /> {/* Ingreso al portal */}   
       </Switch>
       <Footer />
     </BrowserRouter>
