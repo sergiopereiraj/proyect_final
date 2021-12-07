@@ -169,7 +169,7 @@ const MyForm = () => {
                 type="checkbox"
                 id="gridCheck"
               />
-              <Form.Label className="form-check-label" htmlFor="gridCheck">
+              <Form.Label className="form-check-label"  htmlFor="gridCheck">
                 Check me out
               </Form.Label>
             </div>

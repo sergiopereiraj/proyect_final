@@ -80,7 +80,7 @@ def login():
         region= request.json.get("region", "")
         email= request.json.get("email")
         roles= request.json.get("roles", [2])
-        phone= request.json.get("phone")
+        phone= request.json.get("phone", "")
 
         user_exist = User.query.filter_by(rut=rut).first()
         if not user_exist: return jsonify({"msg": "rut/password son incorrectos"}), 400

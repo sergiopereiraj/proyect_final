@@ -13,7 +13,7 @@ function MyModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" className="btn btn-secondary mb-3" onClick={handleShow}>
         Launch demo modal
       </Button>
 
@@ -25,10 +25,10 @@ function MyModal() {
           <MyForm />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" className="btn btn-primary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" className="btn btn-primary" onClick={handleClose}>
             Save Changes
           </Button>
         </Modal.Footer>

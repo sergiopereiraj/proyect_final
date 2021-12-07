@@ -2,8 +2,9 @@ const getState = ({getStore, getActions, setStore})=>{
 
     return{
         store:{
-            email: "",
+            rut: "",
             password: "",
+            isAuth: false,
             currentUser: {
                 access_token: "",
                 user: {
@@ -13,7 +14,7 @@ const getState = ({getStore, getActions, setStore})=>{
                     profile: {},
                     role: [{
                         id: 1,
-                        name: "Admin"
+                        name: "Usuario"
                     }]
                 }
             }

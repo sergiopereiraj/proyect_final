@@ -4,7 +4,7 @@ import { Button, Container } from "react-bootstrap";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-primary text-white d-flex justify-content-around">
+      <footer className="bg-primary text-white d-flex justify-content-around fixed-bottom">
         <div>
           <Button
             type="button"
