@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ConstruccionFormulario from "./component/construccion_form";
 import CartaGraficos from "./component/carta_graficos";
@@ -20,6 +20,7 @@ import NavsInicio from "./component/navs_inicio";
 import MyForm from "./componentesAntonio/Form";
 import NavsDirector from "./component/navs_director";
 import NavsUsuario from "./component/navs_usuario";
+import { Context } from "../../store/AppContent";
 
 const Layout = () => {
   return (
