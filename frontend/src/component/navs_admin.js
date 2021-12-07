@@ -22,12 +22,12 @@ function NavsAdmin() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Perfil</Nav.Link>
+              <Nav.Link href="#action1"><Link to="/admin/perfil" className="text-decoration-none">Perfil</Link></Nav.Link>
               <NavDropdown.Divider />
-              <Nav.Link href="#action1">Solicitudes de Usuarios</Nav.Link>
-              <Nav.Link href="#action2">Registro de Usuarios</Nav.Link>
-              <Nav.Link href="#action3">Perfiles de Usuarios</Nav.Link>
-              <Nav.Link href="#action4">Pautas de Supervisión</Nav.Link>
+              <Nav.Link href="#action1"><Link to="/admin/solicitudes-usuario" className="text-decoration-none">Solicitudes de Usuarios</Link></Nav.Link>
+              <Nav.Link href="#action2"><Link to="/admin/solicitudes-usuario/registrar" className="text-decoration-none">Registro de Usuarios</Link></Nav.Link>
+              <Nav.Link href="#action3"><Link to="/admin/buscador-usuario" className="text-decoration-none">Perfiles de Usuarios</Link></Nav.Link>
+              <Nav.Link href="#action4"><Link to="/admin/construir-formulario" className="text-decoration-none">Pautas de Supervisión</Link></Nav.Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

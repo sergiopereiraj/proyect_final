@@ -11,7 +11,7 @@ const SobreNosotros = () => {
             <Card.Img src="/fotos/fotosergio.jpg" fluid/>
             <Card.Body>
               <Card.Title>Sergio Pereira Jorquera</Card.Title>
-              <Card.Text>
+              <Card.Text className="text-justify">
                 Full-Stack Developer, Enfermero, MSc Salud Publica, Dipl.
                 Acreditación de Calidad, Dipl. IAAS, Evaluador Sistema Nacional
                 de Acreditación en Salud.
