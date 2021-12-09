@@ -5,7 +5,7 @@ const ServiciosClinicos = () => {
   return (
     <>
       <Container>
-        <Row>
+        <Row className="m-2">
           <Form>
             <Form.Group>
               <Form.Label htmlFor="exampleFormControlSelect1">

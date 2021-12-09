@@ -4,7 +4,7 @@ import { Container, Row, Form } from "react-bootstrap";
 const SelectPautas = () => {
   return (
     <Container>
-      <Row>
+      <Row className="m-2">
         <Form.Group>
           <Form.Label htmlFor="exampleFormControlSelect1">
             Seleccionar Pauta de Supervision:

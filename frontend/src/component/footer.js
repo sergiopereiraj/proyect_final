@@ -26,19 +26,19 @@ const Footer = () => {
             type="button"
             className="btn btn-primary btn-lg btn-floating mx-2"
           >
-            <i class="fab fa-linkedin"></i>
+            <a className="text-decoration-none text-white" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
           </Button>
           <Button
             type="button"
             className="btn btn-primary btn-lg btn-floating mx-2"
           >
-            <i className="fab fa-youtube" />
+            <a className="text-decoration-none text-white" href="https://www.youtube.com/" target="_blank"><i className="fab fa-youtube" /></a>
           </Button>
           <Button
             type="button"
             className="btn btn-primary btn-lg btn-floating mx-2"
           >
-            <i className="fab fa-twitter" />
+            <a className="text-decoration-none text-white" href="https://twitter.com/" target="_blank"><i className="fab fa-twitter" /></a>
           </Button>
         </div>
       </footer>

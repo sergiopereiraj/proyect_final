@@ -44,7 +44,7 @@ const SobreNosotros = () => {
         </CardGroup>
         <Row>
         <h2 className="text-center fw-bold">¿Qué hacemos?</h2>
-        <p className="text-center fs-5 m-3">Generamos soluciones tecnologías, para dificultades detectadas en el quehacer laboral. Potenciamos automatización de actividades laborales para aumentar horas profesionales disponibles.</p>
+        <p className="text-center fs-5 m-3">Generamos soluciones tecnológicas, para dificultades detectadas en el quehacer laboral. Potenciamos automatización de actividades laborales para aumentar horas profesionales disponibles.</p>
         <h2 className="text-center fw-bold">¿Por qué lo hacemos?</h2>
         <p className="text-center fs-5 m-3">Como equipo tenemos la fiel convicción de que el desarrollo de herramientas tecnológicas ayuda y potencia las cualidades del equipo de trabajo, facilitando su desempeño, empoderando al equipo en sus acciones y generando mejores logros institucionales.</p>
         <h2 className="text-center fw-bold">¿Cómo lo hacemos?</h2>
