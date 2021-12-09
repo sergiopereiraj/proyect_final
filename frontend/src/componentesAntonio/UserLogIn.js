@@ -70,7 +70,7 @@ const UserLogin = () => {
           </div>
           <div className="col-12 d-flex justify-content-evenly">
             <Button type="submit" className="btn btn-primary mb-3">
-              Sign in
+              Ingresar
             </Button>
             <MyModal />
           </div>

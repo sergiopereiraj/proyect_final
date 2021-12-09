@@ -14,19 +14,19 @@ function MyModal() {
   return (
     <>
       <Button variant="primary" className="btn btn-secondary mb-3" onClick={handleShow}>
-        Launch demo modal
+        Solicitar crear Usuario
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title className="text-center">Registrar Usuario</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <MyForm />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" className="btn btn-primary" onClick={handleClose}>
-            Close
+            Cerrar
           </Button>
           <Button variant="primary" className="btn btn-primary" onClick={handleClose}>
             Save Changes

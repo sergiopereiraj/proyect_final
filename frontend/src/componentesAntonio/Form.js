@@ -27,44 +27,43 @@ const MyForm = () => {
       <Row className="bg-white rounded m-5">
         <Form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12">
-            <Form.Label htmlFor="inputEmail4" className="form-label">
-              Email
+            <Form.Label htmlFor="inputCity" className="form-label">
+              Nombre
             </Form.Label>
             <Form.Control
-              {...register("email", {
+              {...register("nombre", {
                 required: true,
-                email: true,
-                pattern: /^[A-Za-z0-9]$/i,
+                maxLength: 30,
+                pattern: /^[A-Za-z ]+$/i,
               })}
-              type="email"
+              type="text"
               className={
                 "form-control" +
-                (errors.email?.type === "required" ? " is-invalid" : "")
+                (errors.nombre?.type === "required" ? " is-invalid" : "")
               }
             />
             <div className="invalid-feedback">
-              {errors.email?.type === "required" && "Email es requerido"}
+              {errors.nombre?.type === "required" && "Nombre es requerido"}
             </div>
           </div>
           <div className="col-md-12">
-            <Form.Label htmlFor="inputPassword4" className="form-label">
-              Password
+            <Form.Label htmlFor="inputCity" className="form-label">
+              Apellido
             </Form.Label>
             <Form.Control
-              {...register("password", {
+              {...register("apellido", {
                 required: true,
-                minLength: 8,
-                maxLength: 12,
-                pattern: /^[A-Za-z 0-9]+$/i,
+                maxLength: 30,
+                pattern: /^[A-Za-z]+$/i,
               })}
-              type="password"
+              type="text"
               className={
                 "form-control" +
-                (errors.password?.type === "required" ? " is-invalid" : "")
+                (errors.apellido?.type === "required" ? " is-invalid" : "")
               }
             />
             <div className="invalid-feedback">
-              {errors.password?.type === "required" && "Password es requerido"}
+              {errors.apellido?.type === "required" && "Apellido es requerido"}
             </div>
           </div>
           <div className="col-12">
@@ -110,43 +109,44 @@ const MyForm = () => {
             </div>
           </div>
           <div className="col-md-12">
-            <Form.Label htmlFor="inputCity" className="form-label">
-              Nombre
+            <Form.Label htmlFor="inputEmail4" className="form-label">
+              Email
             </Form.Label>
             <Form.Control
-              {...register("nombre", {
+              {...register("email", {
                 required: true,
-                maxLength: 30,
-                pattern: /^[A-Za-z ]+$/i,
+                email: true,
+                pattern: /^[A-Za-z0-9]$/i,
               })}
-              type="text"
+              type="email"
               className={
                 "form-control" +
-                (errors.nombre?.type === "required" ? " is-invalid" : "")
+                (errors.email?.type === "required" ? " is-invalid" : "")
               }
             />
             <div className="invalid-feedback">
-              {errors.nombre?.type === "required" && "Nombre es requerido"}
+              {errors.email?.type === "required" && "Email es requerido"}
             </div>
           </div>
           <div className="col-md-12">
-            <Form.Label htmlFor="inputCity" className="form-label">
-              Apellido
+            <Form.Label htmlFor="inputPassword4" className="form-label">
+              Password
             </Form.Label>
             <Form.Control
-              {...register("apellido", {
+              {...register("password", {
                 required: true,
-                maxLength: 30,
-                pattern: /^[A-Za-z]+$/i,
+                minLength: 8,
+                maxLength: 12,
+                pattern: /^[A-Za-z 0-9]+$/i,
               })}
-              type="text"
+              type="password"
               className={
                 "form-control" +
-                (errors.apellido?.type === "required" ? " is-invalid" : "")
+                (errors.password?.type === "required" ? " is-invalid" : "")
               }
             />
             <div className="invalid-feedback">
-              {errors.apellido?.type === "required" && "Apellido es requerido"}
+              {errors.password?.type === "required" && "Password es requerido"}
             </div>
           </div>
           <div className="col-md-12">
@@ -158,25 +158,26 @@ const MyForm = () => {
               className="form-select"
               {...register("Tipo de usuario")}
             >
-              <option selected>Choose...</option>
-              <option>...</option>
+              <option selected>Usuario</option>
+              <option>Administrador</option>
+              <option>Director</option>
             </Form.Select>
           </div>
           <div className="col-12">
             <div className="form-check">
-              <Form.Control
+{/*               <Form.Control
                 className="form-check-input"
                 type="checkbox"
                 id="gridCheck"
               />
               <Form.Label className="form-check-label"  htmlFor="gridCheck">
                 Check me out
-              </Form.Label>
+              </Form.Label> */}
             </div>
           </div>
           <div className="col-12">
             <Button type="submit" className="btn btn-primary">
-              Sign in
+              Solicitar
             </Button>
           </div>
         </Form>
