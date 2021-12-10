@@ -27,8 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     }]
                 }
             },
-            usuarios: ["user:{id: 1, name: 'Sergio', lastname: 'Pereira', rut: '16670557-6', role: [{id: 1, name:'usuario'}]", "user:{id:1, name: 'Sergio', lastname: 'Pereira', rut: '16670557-6', role: [{id:1, name:'usuario'}]"],
-
+            
         },
             
 

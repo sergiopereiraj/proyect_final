@@ -14,23 +14,27 @@ const SolicitudesUsuarios = () => {
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Apellido</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
                 <th>Rut</th>
+                <th>Email</th>
                 <th>Tipo de Usuarios</th>
               </tr>
             </thead>
             <tbody>
             {
-              !!store.contacts &&
-              store.contacts.map((contact) => {
+              !!store.users &&
+              store.users.map((user) => {
               return(
                 
-                <tr key={contact.id}>
-                <td>{contact.id}</td>
-                <td>{contact.name}</td>
-                <td>{contact.lastname}</td>
-                <td>{contact.rut}</td>
-                <td>{contact.role.name}</td>
+                <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.profile.names}</td>
+                <td>{user.profile.mother_lastname}</td>
+                <td>{user.profile.father_lastname}</td>
+                <td>{user.rut}</td>
+                <td>{user.profile.email}</td>
+                <td>{user.roles[0].name}</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
