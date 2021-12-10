@@ -21,16 +21,16 @@ const SolicitudesUsuarios = () => {
             </thead>
             <tbody>
             {
-              !!store.usuarios &&
-              store.usuarios.map((user) => {
+              !!store.contacts &&
+              store.contacts.map((contact) => {
               return(
                 
-                <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.lastname}</td>
-                <td>{user.rut}</td>
-                <td>{user.role.name}</td>
+                <tr key={contact.id}>
+                <td>{contact.id}</td>
+                <td>{contact.name}</td>
+                <td>{contact.lastname}</td>
+                <td>{contact.rut}</td>
+                <td>{contact.role.name}</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
