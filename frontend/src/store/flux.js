@@ -9,6 +9,8 @@ const getState = ({getStore, getActions, setStore})=>{
                 access_token: "",
                 user: {
                     id: 1,
+                    name: "Sergio",
+                    lastname: "Pereira",
                     rut: "16670557-6",
                     activo: true,
                     profile: {},
@@ -17,7 +19,9 @@ const getState = ({getStore, getActions, setStore})=>{
                         name: "Usuario"
                     }]
                 }
-            }
+            },
+            usuarios: ["user:{id: 1, name: 'Sergio', lastname: 'Pereira', rut: '16670557-6', role: [{id: 1, name:'usuario'}]", "user:{id:1, name: 'Sergio', lastname: 'Pereira', rut: '16670557-6', role: [{id:1, name:'usuario'}]"],
+
         },
         actions: {
             onSubmit: data => console.log({...data}),

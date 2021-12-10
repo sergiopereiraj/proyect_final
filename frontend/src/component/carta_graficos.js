@@ -24,9 +24,7 @@ const CartaGraficos = () => {
                   Porcentaje Cumplimiento Lavado de Manos Global por meses
                 </Card.Title>
                 <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  Grafico anterior refleja el cumplimiento de la Supervision de Lavado de manos en los meses descritos.
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
@@ -43,9 +41,7 @@ const CartaGraficos = () => {
                 Porcentaje Cumplimiento Eliminación de cortopunzante Global por meses
                 </Card.Title>
                 <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                Grafico anterior refleja el cumplimiento de la Supervision de Eliminación de Cortopunzante en los meses descritos.
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
@@ -62,9 +58,7 @@ const CartaGraficos = () => {
                 Porcentaje Cumplimiento Almacenamiento de Material Estéril Global por meses
                 </Card.Title>
                 <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                Grafico anterior refleja el cumplimiento de la Supervision de Almacenamiento de Material Esteril en los meses descritos.
                 </Card.Text>
               </Card.Body>
               <Card.Footer>

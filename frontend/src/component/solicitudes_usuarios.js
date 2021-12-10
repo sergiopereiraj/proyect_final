@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Row, Table, Button } from "react-bootstrap";
+import { Context } from "../store/AppContent";
 
 const SolicitudesUsuarios = () => {
+  const { store } = useContext(Context);
   return (
     <>
       <Container>
@@ -10,6 +12,7 @@ const SolicitudesUsuarios = () => {
           <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Rut</th>
@@ -17,11 +20,17 @@ const SolicitudesUsuarios = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Antonio</td>
-                <td>Bello</td>
-                <td>12.123.123-6</td>
-                <td>Administrador</td>
+            {
+              !!store.usuarios &&
+              store.usuarios.map((user) => {
+              return(
+                
+                <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.lastname}</td>
+                <td>{user.rut}</td>
+                <td>{user.role.name}</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -33,150 +42,9 @@ const SolicitudesUsuarios = () => {
                   </Button>
                 </td>
               </tr>
-              <tr>
-                <td>Andres</td>
-                <td>Valdivia</td>
-                <td>12.123.123-6</td>
-                <td>Director</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>Oscar</td>
-                <td>Schmidt</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>Greivis</td>
-                <td>Vasquez</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>Jason</td>
-                <td>Kidd</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>Emanuel</td>
-                <td>Ginobili</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>Facundo</td>
-                <td>Campazzo</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>Lukas</td>
-                <td>Doncic</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>LeBron James</td>
-                <td>Valdivia</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-              <td>Hal</td>
-                <td>Horford</td>
-                <td>12.123.123-6</td>
-                <td>Usuario</td>
-                <td className="text-center">
-                  <Button variant="success">
-                    Acepta
-                  </Button>
-                </td>
-                <td className="text-center">
-                  <Button variant="danger">
-                    Rechaza
-                  </Button>
-                </td>
-              </tr>
+              )
+              })
+            }
             </tbody>
           </Table>
         </Row>
