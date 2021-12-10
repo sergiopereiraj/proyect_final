@@ -1,26 +1,34 @@
-const getState = ({getStore, getActions, setStore})=>{
+const getState = ({ getStore, getActions, setStore }) => {
 
-    return{
-        store:{
+    return {
+        store: {
+            apiUrl: "http://127.0.0.1:5000",
+            contacts: null,
+            users: null,
             email: "",
             password: "",
-            currentUser: {
-                access_token: "",
-                user: {
-                    id: 1,
-                    rut: "16670557-6",
-                    activo: true,
-                    profile: {},
-                    role: [{
-                        id: 1,
-                        name: "Admin"
-                    }]
-                }
-            }
+            rut: "",
+            name: "",
+            lastname: "",
+            phone: "",
         },
         actions: {
-            onSubmit: data => console.log({...data}),
-            onChange: e =>{}
+            onSubmit: data => console.log({ ...data }),
+            onChange: e => { },
+            getUsers: async (url) => {
+                try {
+                    const response = await fetch(url + "/api/users")
+                    if (!response.ok) throw new Error("Error al consultar usuarios")
+                    const data = await response.json();
+
+                    setStore({
+                        users: data
+                    })
+                } catch (error) {
+                    console.log(error)
+                }
+
+            }
         }
     }
 }

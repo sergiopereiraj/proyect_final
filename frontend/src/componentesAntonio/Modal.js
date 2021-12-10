@@ -14,12 +14,12 @@ function MyModal() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Crear un nuevo usuario
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Crea tu usuario</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <MyForm />
