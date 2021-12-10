@@ -18,7 +18,7 @@ const UserLogin = () => {
     handleSubmit,
   } = useForm({
     defaultValues: {
-      email: store.email,
+      rut: store.rut,
       password: store.password,
     },
   });
@@ -29,22 +29,22 @@ const UserLogin = () => {
         <Form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12">
             <Form.Label htmlFor="inputEmail4" className="form-label">
-              Email
+              Rut
             </Form.Label>
             <Form.Control
-              {...register("email", {
+              {...register("rut", {
                 required: true,
-                email: true,
+                rut: true,
                 pattern: /^[A-Za-z0-9]$/i,
               })}
-              type="email"
+              type="text"
               className={
                 "form-control" +
-                (errors.email?.type === "required" ? " is-invalid" : "")
+                (errors.rut?.type === "required" ? " is-invalid" : "")
               }
             />
             <div className="invalid-feedback">
-              {errors.email?.type === "required" && "Email es requerido"}
+              {errors.rut?.type === "required" && "Rut es requerido"}
             </div>
           </div>
           <div className="col-md-12">
@@ -69,8 +69,8 @@ const UserLogin = () => {
             </div>
           </div>
           <div className="col-12 d-flex justify-content-evenly">
-            <Button type="submit" className="btn btn-primary">
-              Sign in
+            <Button type="submit" className="btn btn-primary mb-3">
+              Ingresar
             </Button>
             <MyModal />
           </div>

@@ -17,7 +17,7 @@ const BarraPorcentajeBoton = forwardRef((props, ref) => {
   return (
     <>
       <Container>
-      <Row className="m-5">
+        <Row className="m-5">
           <ProgressBar animated now={currProgress} />
         </Row>
         <br/>

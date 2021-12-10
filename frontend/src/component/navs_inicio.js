@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, Navbar, Container, Offcanvas, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom"
 
 function NavsInicio() {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
@@ -8,7 +9,7 @@ function NavsInicio() {
     <Navbar bg="primary" variant="dark" expand={false}>
       <Container>
         <Navbar.Brand href="#">
-          <i class="fas fa-laptop-medical"></i>
+        <Link className="text-decoration-none text-white" to="/login"><i class="fas fa-laptop-medical"></i></Link>
         </Navbar.Brand>
         </Container>
     </Navbar>

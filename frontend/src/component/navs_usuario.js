@@ -15,7 +15,7 @@ function NavsUsuario() {
     <Navbar bg="primary" variant="dark" expand={false}>
       <Container>
         <Navbar.Brand to="/" as={Link}>
-          <i class="fas fa-laptop-medical"></i>
+          <Link className="text-decoration-none text-white" to="/usuario/graficos-meses"><i class="fas fa-laptop-medical"></i></Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
@@ -28,10 +28,10 @@ function NavsUsuario() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Perfil</Nav.Link>
+              <Nav.Link href="#action1"><Link className="text-decoration-none" to="/usuario/perfil">Perfil</Link></Nav.Link>
               <NavDropdown.Divider />
               <Nav.Link>
-                <Link className="text-decoration-none" to="/usuario/perfil">
+                <Link className="text-decoration-none" to="/usuario/graficos-meses">
                   Acceso
                 </Link>
               </Nav.Link>
@@ -63,8 +63,6 @@ function NavsUsuario() {
                   </Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#action3">Resultado</Nav.Link>
-
               <Nav.Link>
                 <Link to="/usuario/resultado" className="text-decoration-none">
                   Resultado
