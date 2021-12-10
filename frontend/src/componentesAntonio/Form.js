@@ -3,27 +3,41 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Context } from "../store/AppContent";
 import { Container, Row, Form, Button } from "react-bootstrap";
+import PerfilUsuario from "../component/perfil_usuario";
 
 
 const defaultValues = {
-    email: "",
-    input : "",
+  email: "",
+  password: "",
+  input: "",
+  rut: "",
+  name: "",
+  lastname: "",
+  phone: "",
 
 };
 
 
 
 const MyForm = () => {
-    const {store, actions} = useContext(Context);
-    const {onSubmit} = actions;
-    const { register, formState: { errors }, handleSubmit } = useForm({defaultValues:{
-        email: store.email,
-        password: store.password,
-    }});
-    
+  const { store, actions } = useContext(Context);
+  const { onSubmit } = actions;
+  const { register, formState: { errors }, handleSubmit } = useForm({
+    defaultValues: {
+      email: store.email,
+      password: store.password,
+      rut: store.rut,
+      name: store.name,
+      lastname: store.lastname,
+      phone: store.phone,
+    }
+  });
 
-    return (
-        <Container>
+  
+
+
+  return (
+    <Container>
       <Row className="bg-white rounded m-5">
         <Form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12">
@@ -149,7 +163,7 @@ const MyForm = () => {
               {errors.password?.type === "required" && "Password es requerido"}
             </div>
           </div>
-          <div className="col-md-12">
+          {/* <div className="col-md-12">
             <Form.Label htmlFor="inputState" className="form-label">
               Tipo de usuario
             </Form.Label>
@@ -162,7 +176,7 @@ const MyForm = () => {
               <option>Administrador</option>
               <option>Director</option>
             </Form.Select>
-          </div>
+          </div> */}
           <div className="col-12">
             <div className="form-check">
 {/*               <Form.Control
@@ -183,6 +197,6 @@ const MyForm = () => {
         </Form>
       </Row>
     </Container>
-    );
+  );
 }
 export default MyForm;
