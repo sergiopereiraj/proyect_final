@@ -28,6 +28,7 @@ import PerfilUsuario from "./component/perfil_usuario";
 import Navs from "./component/navs";
 import Contacto from "./component/contacto";
 import SobreNosotros from "./component/sobre_nosotros";
+import EditarContacto from "./component/editar_contacto";
 
 const Layout = () => {
   return (
@@ -35,6 +36,7 @@ const Layout = () => {
       <Navs />
       <Switch>
         <Route exact path="/admin/solicitudes-usuario" component={SolicitudesUsuarios} /> {/*vista ad 1 */}
+        <Route exact path="/admin/solicitudes-usuario/:id/editar-contacto" component={EditarContacto} />
         <Route exact path="/admin/solicitudes-usuario/registrar" component={MyForm} /> {/*vista ad 2 */}
         <Route exact path="/admin/buscador-usuario" component={BuscadorUsuario} /> {/*vista ad 3 */}
         <Route exact path="/admin/construir-formulario" component={ConstruccionFormulario} /> {/*vista ad 4 */}
