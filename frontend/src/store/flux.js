@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             apiUrl: "http://127.0.0.1:5000",
             contacts: null,
             users: null,
+            user: null,
             email: "",
             password: "",
             rut: "",
@@ -34,8 +35,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 
           
         actions: {
-            onSubmit: data => console.log({ ...data }),
-            onChange: e => { },
+            onSubmit: async user_data => {
+                try {
+                    console.log(user_data)
+                    const store = getStore()
+                    const response = await fetch(store.apiUrl + "/api/register",{
+                        method:"POST",
+                        headers:{
+                            "Content-Type": "application/json"
+
+                        },
+                        body :JSON.stringify({
+                            rut: user_data.rut,
+                            email: user_data.email,
+                            password: user_data.password
+                        })
+
+
+                        
+                    })
+                    /* if (!response.ok) throw new Error("Error al consultar usuarios") */
+                    const data = await response.json();
+                    console.log(data)
+                } catch (error) {
+                    console.log(error)
+                }
+            },
             getUsers: async (url) => {
                 try {
                     const response = await fetch(url + "/api/users")
@@ -48,6 +73,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                 } catch (error) {
                     console.log(error)
                 }
+
+            },
+            setUser: (user)=>{
+                setStore({
+                    user
+                })
 
             }
         }
