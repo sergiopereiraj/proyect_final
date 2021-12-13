@@ -48,13 +48,38 @@ const getState = ({ getStore, getActions, setStore }) => {
                         body :JSON.stringify({
                             rut: user_data.rut,
                             email: user_data.email,
+                            password: user_data.password,
+                            names: user_data.names,
+                        })
+
+
+                        
+                    })
+                    const data = await response.json();
+                    console.log(data)
+                } catch (error) {
+                    console.log(error)
+                }
+            },
+            modificarUser: async user_data => {
+                try {
+                    console.log(user_data)
+                    const store = getStore()
+                    const response = await fetch(store.apiUrl + "/api/register",{
+                        method:"PUT",
+                        headers:{
+                            "Content-Type": "application/json"
+
+                        },
+                        body :JSON.stringify({
+                            rut: user_data.rut,
+                            email: user_data.email,
                             password: user_data.password
                         })
 
 
                         
                     })
-                    /* if (!response.ok) throw new Error("Error al consultar usuarios") */
                     const data = await response.json();
                     console.log(data)
                 } catch (error) {

@@ -26,37 +26,32 @@ const UserLogin = () => {
   return (
     <Container>
       <Row className="bg-white rounded m-5">
-        <Form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
-          <div className="col-md-12">
-            <Form.Label htmlFor="inputEmail4" className="form-label">
-              Rut
+        <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
+        <div className="col-md-12">
+            <Form.Label className="form-label">
+              Email
             </Form.Label>
             <Form.Control
-              {...register("rut", {
+              {...register("email", {
                 required: true,
-                rut: true,
-                pattern: /^[A-Za-z0-9]$/i,
               })}
-              type="text"
+              type="email"
               className={
                 "form-control" +
-                (errors.rut?.type === "required" ? " is-invalid" : "")
+                (errors.email?.type === "required" ? " is-invalid" : "")
               }
             />
             <div className="invalid-feedback">
-              {errors.rut?.type === "required" && "Rut es requerido"}
+              {errors.email?.type === "required" && "Email es requerido"}
             </div>
           </div>
           <div className="col-md-12">
-            <Form.Label htmlFor="inputPassword4" className="form-label">
+            <Form.Label className="form-label">
               Password
             </Form.Label>
             <Form.Control
               {...register("password", {
                 required: true,
-                minLength: 8,
-                maxLength: 12,
-                pattern: /^[A-Za-z 0-9]+$/i,
               })}
               type="password"
               className={
@@ -69,12 +64,10 @@ const UserLogin = () => {
             </div>
           </div>
           <div className="col-12 d-flex justify-content-evenly">
-            <Button type="submit" className="btn btn-primary mb-3">
-              Ingresar
-            </Button>
+          <input type="submit" className="btn btn-primary"/>
             <MyModal />
           </div>
-        </Form>
+        </form>
       </Row>
     </Container>
   );

@@ -26,7 +26,7 @@ const BarraPorcentajeBoton = forwardRef((props, ref) => {
         <br/>
         <Row>
           {" "}
-          <Button className="m-2"onSubmit={actions.onSubmit}>Enviar</Button>
+          {/* <Button className="m-2"onSubmit={actions.onSubmit}>Enviar</Button> */}
         </Row>
       </Container>
     </>

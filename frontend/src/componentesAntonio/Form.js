@@ -128,7 +128,7 @@ const MyForm = () => {
               {errors.apellido?.type === "required" && "Apellido es requerido"}
             </div>
           </div>
-          {/* <div className="col-md-12">
+          <div className="col-md-12">
             <Form.Label htmlFor="inputState" className="form-label">
               Tipo de usuario
             </Form.Label>
@@ -137,10 +137,10 @@ const MyForm = () => {
               className="form-select"
               {...register("Tipo de usuario")}
             >
-              <option selected>Choose...</option>
-              <option>...</option>
+              <option selected>user</option>
+              <option>admin</option>
             </Form.Select>
-          </div> */}
+          </div>
           <div className="col-12">
             <input type="submit" className="btn btn-primary"/>
           </div>
