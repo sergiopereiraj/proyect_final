@@ -25,19 +25,30 @@ const EditarContacto = () => {
               type="text"
               className="form-control"
               id="names"
-              placeholder="Antonio"
+              placeholder="Nombre"
               value={!!user && user.profile.names}
               onChange={handleChangeUser}
             />
           </div>
           <div className="col-md-12">
-            <Form.Label className="form-label">Apellido</Form.Label>
+            <Form.Label className="form-label">Apellido Paterno</Form.Label>
             <Form.Control
               type="text"
               className="form-control"
               id="father_lastname"
-              placeholder="Iturra"
+              placeholder="Apellido Paterno"
               value={!!user && user.profile.father_lastname}
+              onChange={handleChangeUser}
+            />
+          </div>
+          <div className="col-md-12">
+            <Form.Label className="form-label">Apellido Materno</Form.Label>
+            <Form.Control
+              type="text"
+              className="form-control"
+              id="mother_lastname"
+              placeholder="Apellido Materno"
+              value={!!user && user.profile.mother_lastname}
               onChange={handleChangeUser}
             />
           </div>
@@ -85,6 +96,23 @@ const EditarContacto = () => {
               onChange={handleChangeUser}
             />
           </div>
+          <div className="col-md-12">
+            <Form.Label htmlFor="inputState" className="form-label">
+              Tipo de usuario
+            </Form.Label>
+            <Form.Select
+              id="rol"
+              className="form-select"
+              placeholder={!! user && user.profile.rol}
+              value={!! user && user.profile.rol}
+              onChange={handleChangeUser}
+            >
+              <option></option>
+              <option selected>User</option>
+              <option>Admin</option>
+              <option>Director</option>
+            </Form.Select>
+            </div>
           <div className="col-md-12 d-flex justify-content-center m-3">
             <Button type="submit" className="btn btn-primary">
               Cambiar

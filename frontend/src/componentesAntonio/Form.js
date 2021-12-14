@@ -163,7 +163,7 @@ const MyForm = () => {
               {errors.password?.type === "required" && "Password es requerido"}
             </div>
           </div>
-          {/* <div className="col-md-12">
+<div className="col-md-12">
             <Form.Label htmlFor="inputState" className="form-label">
               Tipo de usuario
             </Form.Label>
@@ -176,7 +176,7 @@ const MyForm = () => {
               <option>Administrador</option>
               <option>Director</option>
             </Form.Select>
-          </div> */}
+          </div>
           <div className="col-12">
             <div className="form-check">
 {/*               <Form.Control
