@@ -13,13 +13,13 @@ function MyModal() {
 
   return (
     <>
-      <Button variant="primary" className="btn btn-secondary mb-3" onClick={handleShow}>
-        Solicitar crear Usuario
+      <Button variant="primary" onClick={handleShow}>
+        Crear un nuevo usuario
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="text-center">Registrar Usuario</Modal.Title>
+          <Modal.Title>Crea tu usuario</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <MyForm />

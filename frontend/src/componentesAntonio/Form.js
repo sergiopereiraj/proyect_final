@@ -7,10 +7,13 @@ import { Container, Row, Form, Button } from "react-bootstrap";
 
 const MyForm = () => {
   const { store, actions } = useContext(Context);
-  const { register, formState: { errors }, handleSubmit, watch } = useForm(
+  const { register, formState: { errors }, reset,handleSubmit} = useForm(
   );
   
-
+  const onSubmit = (data)=>{
+    console.log(data);
+    reset();
+  }
 
   return (
     <Container>
@@ -23,6 +26,7 @@ const MyForm = () => {
             <Form.Control
               {...register("email", {
                 required: true,
+                
               })}
               type="email"
               className={
@@ -128,7 +132,7 @@ const MyForm = () => {
               {errors.apellido?.type === "required" && "Apellido es requerido"}
             </div>
           </div>
-          <div className="col-md-12">
+       {/*    <div className="col-md-12">
             <Form.Label htmlFor="inputState" className="form-label">
               Tipo de usuario
             </Form.Label>
@@ -137,10 +141,10 @@ const MyForm = () => {
               className="form-select"
               {...register("Tipo de usuario")}
             >
-              <option selected>user</option>
-              <option>admin</option>
+              <option selected>User</option>
+              <option>Admin</option>
             </Form.Select>
-          </div>
+          </div> */}
           <div className="col-12">
             <input type="submit" className="btn btn-primary"/>
           </div>

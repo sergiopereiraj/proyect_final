@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Container, Row, Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { Context } from "../store/AppContent";
 
 const SolicitudesUsuarios = () => {
-  const { store } = useContext(Context);
+  const { store, actions: {setUser} } = useContext(Context);
   return (
     <>
       <Container>
@@ -14,23 +15,27 @@ const SolicitudesUsuarios = () => {
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Apellido</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
                 <th>Rut</th>
+                <th>Email</th>
                 <th>Tipo de Usuarios</th>
               </tr>
             </thead>
             <tbody>
             {
-              !!store.usuarios &&
-              store.usuarios.map((user) => {
+              !!store.users &&
+              store.users.map((user) => {
               return(
                 
                 <tr key={user.id}>
                 <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.lastname}</td>
+                <td>{user.profile.names}</td>
+                <td>{user.profile.father_lastname}</td>
+                <td>{user.profile.mother_lastname}</td>
                 <td>{user.rut}</td>
-                <td>{user.role.name}</td>
+                <td>{user.profile.email}</td>
+                <td>{user.roles[0].name}</td>
                 <td className="text-center">
                   <Button variant="success">
                     Acepta
@@ -39,6 +44,11 @@ const SolicitudesUsuarios = () => {
                 <td className="text-center">
                   <Button variant="danger">
                     Rechaza
+                  </Button>
+                </td>
+                <td className="text-center">
+                  <Button variant="info"> 
+                    <Link className="text-decoration-none text-white"to={"/admin/solicitudes-usuario/" + user.id + "/editar-contacto"} onClick={()=>setUser(user)}>Editar</Link>
                   </Button>
                 </td>
               </tr>

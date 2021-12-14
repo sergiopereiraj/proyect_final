@@ -24,12 +24,11 @@ const getState = ({ getStore, getActions, setStore }) => {
                     profile: {},
                     role: [{
                         id: 1,
-                        name: "Usuario"
+                        name: "Admin"
                     }]
                 }
             },
-            usuarios: ["user:{id: 1, name: 'Sergio', lastname: 'Pereira', rut: '16670557-6', role: [{id: 1, name:'usuario'}]", "user:{id:1, name: 'Sergio', lastname: 'Pereira', rut: '16670557-6', role: [{id:1, name:'usuario'}]"],
-
+            
         },
             
 
@@ -49,7 +48,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                             rut: user_data.rut,
                             email: user_data.email,
                             password: user_data.password,
-                            names: user_data.names,
                         })
 
 
@@ -61,12 +59,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log(error)
                 }
             },
-            modificarUser: async user_data => {
+            loginUser: async user_data => {
                 try {
                     console.log(user_data)
                     const store = getStore()
-                    const response = await fetch(store.apiUrl + "/api/register",{
-                        method:"PUT",
+                    const response = await fetch(store.apiUrl + "/api/login",{
+                        method:"POST",
                         headers:{
                             "Content-Type": "application/json"
 
@@ -74,7 +72,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                         body :JSON.stringify({
                             rut: user_data.rut,
                             email: user_data.email,
-                            password: user_data.password
+                            password: user_data.password,
+                            names: user_data.names,
                         })
 
 
@@ -100,11 +99,61 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
 
             },
-            setUser: (user)=>{
+            getUserById: async (url,id) => {
+                try {
+                    const response = await fetch(url + "/api/users" +id);
+                    if (!response.ok) throw new Error("Error al consultar el usuarios")
+                    const data = await response.json();
+
+                    setStore({
+                        user: data
+                    })
+                } catch (error) {
+                    console.log(error)
+                }
+
+            },
+            updateUser: async (url, user) => {
+                try {
+                    const response = await fetch(url + "/api/users" + user.id, {
+                        method: 'PUT',
+                        body: JSON.stringify(user),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    if (!response.ok) throw new Error("Error al consultar el usuarios")
+                    const data = await response.json();
+
+                    setStore({
+                        user: data
+                    })
+                } catch (error) {
+                    console.log(error)
+                }
+
+            },
+            handleChangeUser: e => {
+                const {user} = getStore();
+             let profile = {
+                 ...user.profile,
+                 [e.target.id]: e.target.value
+             };
+                setStore({
+                    user: {...user, profile: profile}
+                })
+            },
+            handleSubmitUser: e =>{
+                e.preventDefault();
+                const {apiURL, user} = getStore();
+                const{updateUser} = getActions();
+                updateUser(apiURL, user)
+
+            },
+            setUser: (user) => {
                 setStore({
                     user
                 })
-
             }
         }
     }

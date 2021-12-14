@@ -2,31 +2,24 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Context } from "../store/AppContent";
 import MyModal from "./Modal";
-import { Container, Row, Form, Button } from "react-bootstrap";
+import { Container, Row, Form } from "react-bootstrap";
 
-const defaultValues = {
-  email: "",
-  input: "",
-};
 
 const UserLogin = () => {
   const { store, actions } = useContext(Context);
-  const { onSubmit } = actions;
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm({
-    defaultValues: {
-      rut: store.rut,
-      password: store.password,
-    },
-  });
+  const { register, formState: { errors }, reset,handleSubmit} = useForm(
+  );
+  
+  const onSubmit = (data)=>{
+    console.log(data);
+    reset();
+  }
+  
 
   return (
     <Container>
       <Row className="bg-white rounded m-5">
-        <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
+        <form className="row g-3" onSubmit={handleSubmit(actions.loginUser)}>
         <div className="col-md-12">
             <Form.Label className="form-label">
               Email
