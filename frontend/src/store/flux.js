@@ -38,17 +38,21 @@ const getState = ({ getStore, getActions, setStore }) => {
                 try {
                     console.log(user_data)
                     const store = getStore()
+                    const body = JSON.stringify({
+                        rut: user_data.rut,
+                        email: user_data.email,
+                        password: user_data.password,
+                        names: user_data.nombre,
+
+                    });
+                    //console.log(body);
                     const response = await fetch(store.apiUrl + "/api/register",{
                         method:"POST",
                         headers:{
                             "Content-Type": "application/json"
 
                         },
-                        body :JSON.stringify({
-                            rut: user_data.rut,
-                            email: user_data.email,
-                            password: user_data.password,
-                        })
+                        body : body
 
 
                         
@@ -70,10 +74,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                         },
                         body :JSON.stringify({
-                            rut: user_data.rut,
                             email: user_data.email,
                             password: user_data.password,
-                            names: user_data.names,
                         })
 
 
