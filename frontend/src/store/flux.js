@@ -43,9 +43,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                         email: user_data.email,
                         password: user_data.password,
                         names: user_data.nombre,
+                        father_lastname: user_data.apellido,
 
                     });
-                    //console.log(body);
+                    console.log(body);
                     const response = await fetch(store.apiUrl + "/api/register",{
                         method:"POST",
                         headers:{
@@ -74,7 +75,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                         },
                         body :JSON.stringify({
-                            email: user_data.email,
+                            rut: user_data.rut,
                             password: user_data.password,
                         })
 

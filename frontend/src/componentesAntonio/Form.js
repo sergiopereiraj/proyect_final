@@ -10,10 +10,10 @@ const MyForm = () => {
   const { register, formState: { errors }, reset,handleSubmit} = useForm(
   );
   
-  const onSubmit = (data)=>{
+ /*  const onSubmit = (data)=>{
     console.log(data);
     reset();
-  }
+  } */
 
   return (
     <Container>

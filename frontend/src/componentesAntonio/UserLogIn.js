@@ -22,20 +22,20 @@ const UserLogin = () => {
         <form className="row g-3" onSubmit={handleSubmit(actions.loginUser)}>
         <div className="col-md-12">
             <Form.Label className="form-label">
-              Email
+              Rut
             </Form.Label>
             <Form.Control
-              {...register("email", {
+              {...register("rut", {
                 required: true,
               })}
-              type="email"
+              type="text"
               className={
                 "form-control" +
-                (errors.email?.type === "required" ? " is-invalid" : "")
+                (errors.rut?.type === "required" ? " is-invalid" : "")
               }
             />
             <div className="invalid-feedback">
-              {errors.email?.type === "required" && "Email es requerido"}
+              {errors.rut?.type === "required" && "Email es requerido"}
             </div>
           </div>
           <div className="col-md-12">
