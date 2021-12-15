@@ -139,7 +139,7 @@ const MyForm = () => {
             <Form.Select
               id="inputState"
               className="form-select"
-              {...register("Tipo de usuario")}
+              {...register("roles")}
             >
               <option selected>User</option>
               <option>Admin</option>

@@ -5,7 +5,7 @@ import { Context } from "../store/AppContent";
 import { Container, Row, Form, Button } from "react-bootstrap";
 
 
-const PerfilAdmin = () => {
+const PerfilAdmin = (props) => {
   const { store, actions } = useContext(Context);
   const { onSubmit } = actions;
   const {

@@ -13,21 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             lastname: "",
             phone: "",
             isAuth: false,
-            currentUser: {
-                access_token: "",
-                user: {
-                    id: 1,
-                    name: "Sergio",
-                    lastname: "Pereira",
-                    rut: "16670557-6",
-                    activo: true,
-                    profile: {},
-                    role: [{
-                        id: 1,
-                        name: "Admin"
-                    }]
-                }
-            },
+            currentUser: null,
             
         },
             
@@ -44,6 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         password: user_data.password,
                         names: user_data.nombre,
                         father_lastname: user_data.apellido,
+                        roles: user_data.roles,
 
                     });
                     console.log(body);
@@ -54,8 +41,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                         },
                         body : body
-
-
                         
                     })
                     const data = await response.json();
@@ -78,8 +63,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                             rut: user_data.rut,
                             password: user_data.password,
                         })
-
-
                         
                     })
                     const data = await response.json();
@@ -153,6 +136,14 @@ const getState = ({ getStore, getActions, setStore }) => {
                 updateUser(apiURL, user)
 
             },
+                /* isAunthenticated: ()=>{
+                    if(sessionStorage,getItem("isAuth")){
+                        setStore({
+                            isAuth: sessionStorage.getItem("isAuth"),
+                            currentUser: Json.parse(sessionStorage.getItem("currentUser"))
+                        })
+                    }
+                }, */
             setUser: (user) => {
                 setStore({
                     user
