@@ -1,6 +1,7 @@
-import datetime
+from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 db=SQLAlchemy()
+
 
 
 
@@ -142,13 +143,12 @@ class Pauta(db.Model):
     __tablename__= "pautas"
     id= db.Column(db.Integer, primary_key=True)
     categoria= db.Column(db.String(200), unique=True)
-    supervision_id= db.Column(db.Integer,db.ForeignKey('supervisiones.id'), primary_key=True)
+    
 
     def serialize(self):
         return{
             "id":self.id,
-            "categoria":self.categoria.serialize(),
-            "supervision_id":self.supervision_id
+            "categoria":self.categoria,
         }
 
 
@@ -193,9 +193,9 @@ class Requerimiento(db.Model):
 class Resultado(db.Model):
     __tablename__= "resultados"
     id= db.Column(db.Integer, primary_key=True)
-    title=db.Column(db.String(250), nullable=False, unique=True)
+    title=db.Column(db.String(250), nullable=False)
     content= db.Column(db.Text(500))
-    created_at= db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    created_at= db.Column(db.DateTime, default=datetime.utcnow)
     supervision_id= db.Column(db.Integer, db.ForeignKey('supervisiones.id'))
     requerimiento_id= db.Column(db.Integer, db.ForeignKey('requerimientos.id'))
 
@@ -204,7 +204,6 @@ class Resultado(db.Model):
             "id":self.id,
             "title":self.id,
             "content":self.content,
-            "image":self.image,
             "created_at":self.created_at,
             "supervision_id":self.supervision_id,
             "requerimiento_id":self.requerimiento_id
@@ -226,9 +225,9 @@ class Supervision(db.Model):
     id= db.Column(db.Integer, primary_key=True)
     content= db.Column(db.Text(500))
     title= db.Column(db.String(500))
-    created_at= db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    created_at= db.Column(db.DateTime, default=datetime.utcnow)
     user_id= db.Column(db.Integer, db.ForeignKey('users.id'))
-    pautas= db.relationship('Pauta', backref='supervision')
+
     resultados= db.relationship('Resultado', backref='supervision')
 
     def serialize(self):
