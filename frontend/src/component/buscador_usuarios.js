@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { Container, Row, Table, InputGroup, Form } from "react-bootstrap";
+import { Container, Row, Table, InputGroup, Form, Button } from "react-bootstrap";
 import { Context } from "../store/AppContent";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BuscadorUsuario = () => {
   const {
@@ -12,7 +13,7 @@ const BuscadorUsuario = () => {
 const [busqueda, setBusqueda] = useState('');
 
 const handlefilter = (user) => {
-return user.profile.names?.toLowerCase().includes(busqueda.toLowerCase()) || user.profile.father_lastname?.toLowerCase().includes(busqueda.toLowerCase()) || user.profile.mother_lastname?.toLowerCase().includes(busqueda.toLowerCase())
+return user.profile.names?.toString().toLowerCase().includes(busqueda.toLowerCase()) || user.profile.father_lastname?.toLowerCase().includes(busqueda.toLowerCase()) || user.profile.mother_lastname?.toLowerCase().includes(busqueda.toLowerCase())
 } 
 
   return (
@@ -25,7 +26,6 @@ return user.profile.names?.toLowerCase().includes(busqueda.toLowerCase()) || use
             <Form.Control
               type="text"
               placeholder="Nombre y Apellidos"
-              name="term"
               id="buscar"
               onChange={(e)=> setBusqueda(e.target.value)}
             />
@@ -43,7 +43,7 @@ return user.profile.names?.toLowerCase().includes(busqueda.toLowerCase()) || use
               </tr>
             </thead>
             <tbody>
-              {!!store.users &&
+              {!!store.users && store.users.length > 0 &&
                 store.users.filter(handlefilter).map((user) => {
                   return (
                     <tr key={user.id}>
@@ -54,6 +54,11 @@ return user.profile.names?.toLowerCase().includes(busqueda.toLowerCase()) || use
                       <td>{user.rut}</td>
                       <td>{user.profile.email}</td>
                       <td>{user.roles[0].name}</td>
+                      <td className="text-center">
+                  <Button variant="info"> 
+                    <Link className="text-decoration-none text-white"to={"/admin/solicitudes-usuario/" + user.id + "/editar-contacto"} onClick={()=>setUser(user)}>Editar</Link>
+                  </Button>
+                </td>
                     </tr>
                   );
                 })}
