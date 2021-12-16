@@ -30,7 +30,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                         password: user_data.password,
                         names: user_data.nombre,
                         father_lastname: user_data.apellido,
-                        roles: user_data.roles,
 
                     });
                     console.log(body);
@@ -63,7 +62,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                             rut: user_data.rut,
                             password: user_data.password,
                         })
-                        
                     })
                     const data = await response.json();
                     console.log(data)
@@ -135,6 +133,34 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const{updateUser} = getActions();
                 updateUser(apiURL, user)
 
+            },
+            onSubmit: async user_data => {
+                try {
+                    console.log(user_data)
+                    const store = getStore()
+                    const body = JSON.stringify({
+                        rut: user_data.rut,
+                        email: user_data.email,
+                        password: user_data.password,
+                        names: user_data.nombre,
+                        father_lastname: user_data.apellido,
+
+                    });
+                    console.log(body);
+                    const response = await fetch(store.apiUrl + "/api/register",{
+                        method:"POST",
+                        headers:{
+                            "Content-Type": "application/json"
+
+                        },
+                        body : body
+                        
+                    })
+                    const data = await response.json();
+                    console.log(data)
+                } catch (error) {
+                    console.log(error)
+                }
             },
                 /* isAunthenticated: ()=>{
                     if(sessionStorage,getItem("isAuth")){
