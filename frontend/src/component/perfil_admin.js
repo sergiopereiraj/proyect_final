@@ -4,12 +4,8 @@ import { useForm } from "react-hook-form";
 import { Context } from "../store/AppContent";
 import { Container, Row, Form, Button } from "react-bootstrap";
 
-const defaultValues = {
-  email: "",
-  input: "",
-};
 
-const PerfilAdmin = () => {
+const PerfilAdmin = (props) => {
   const { store, actions } = useContext(Context);
   const { onSubmit } = actions;
   const {
@@ -17,10 +13,7 @@ const PerfilAdmin = () => {
     formState: { errors },
     handleSubmit,
   } = useForm({
-    defaultValues: {
-      email: store.email,
-      password: store.password,
-    },
+    
   });
 
   return (

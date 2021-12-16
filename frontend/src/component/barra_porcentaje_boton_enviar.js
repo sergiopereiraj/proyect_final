@@ -1,9 +1,12 @@
-import React, { useState, forwardRef, useImperativeHandle } from "react";
-import { Container, Row, ProgressBar, Button } from "react-bootstrap";
+import React, { useState, forwardRef, useImperativeHandle, useContext } from "react";
+import { Container, Row, ProgressBar, Button, AccordionButton } from "react-bootstrap";
+import { Context } from "../store/AppContent";
+
 
 const BarraPorcentajeBoton = forwardRef((props, ref) => {
 
   const [currProgress, setProgress] = useState(0);
+  const { store, actions } = useContext(Context);
 
   useImperativeHandle(ref, () => ({
     addToProgress(value) {
@@ -23,7 +26,7 @@ const BarraPorcentajeBoton = forwardRef((props, ref) => {
         <br/>
         <Row>
           {" "}
-          <Button className="m-2">Enviar</Button>
+          {<Button className="m-2"onSubmit={actions}>Enviar</Button>}
         </Row>
       </Container>
     </>
