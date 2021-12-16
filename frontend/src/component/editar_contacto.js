@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Container, Row, Button, Form, ButtonGroup } from "react-bootstrap";
 import context from "react-bootstrap/esm/AccordionContext";
+import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/AppContent";
@@ -15,6 +16,7 @@ const EditarContacto = () => {
     getUserById(apiURL, id);
   }, []);
 
+
   return (
     <Container>
       <Row className="bg-white m-5">
@@ -25,19 +27,30 @@ const EditarContacto = () => {
               type="text"
               className="form-control"
               id="names"
-              placeholder="Antonio"
+              placeholder="Nombre"
               value={!!user && user.profile.names}
               onChange={handleChangeUser}
             />
           </div>
           <div className="col-md-12">
-            <Form.Label className="form-label">Apellido</Form.Label>
+            <Form.Label className="form-label">Apellido Paterno</Form.Label>
             <Form.Control
               type="text"
               className="form-control"
               id="father_lastname"
-              placeholder="Iturra"
+              placeholder="Apellido Paterno"
               value={!!user && user.profile.father_lastname}
+              onChange={handleChangeUser}
+            />
+          </div>
+          <div className="col-md-12">
+            <Form.Label className="form-label">Apellido Materno</Form.Label>
+            <Form.Control
+              type="text"
+              className="form-control"
+              id="mother_lastname"
+              placeholder="Apellido Materno"
+              value={!!user && user.profile.mother_lastname}
               onChange={handleChangeUser}
             />
           </div>
@@ -85,9 +98,26 @@ const EditarContacto = () => {
               onChange={handleChangeUser}
             />
           </div>
+          <div className="col-md-12">
+            <Form.Label htmlFor="inputState" className="form-label">
+              Tipo de usuario
+            </Form.Label>
+            <Form.Select
+              id="roles"
+              className="form-select"
+              placeholder=""
+              value={!! user && user.roles[0].name}
+              onChange={handleChangeUser}
+            >
+              <option selected></option>
+              <option >User</option>
+              <option>Admin</option>
+              <option>Director</option>
+            </Form.Select>
+            </div>
           <div className="col-md-12 d-flex justify-content-center m-3">
-            <Button type="submit" className="btn btn-primary">
-              Cambiar
+            <Button type="submit" className="btn btn-success" >
+              Aceptar
             </Button>
           </div>
         </Form>

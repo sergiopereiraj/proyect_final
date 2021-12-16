@@ -133,6 +133,9 @@ const MyForm = () => {
             </div>
           </div>
        {/*    <div className="col-md-12">
+
+<div className="col-md-12">
+
             <Form.Label htmlFor="inputState" className="form-label">
               Tipo de usuario
             </Form.Label>
@@ -144,7 +147,7 @@ const MyForm = () => {
               <option selected>User</option>
               <option>Admin</option>
             </Form.Select>
-          </div> */}
+          </div>
           <div className="col-12">
             <input type="submit" className="btn btn-primary"/>
           </div>
