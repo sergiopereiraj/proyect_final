@@ -1,64 +1,67 @@
-import React from "react";
-import { Container, Row, Table, InputGroup, Form } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Container, Row, Table, InputGroup, Form, Button } from "react-bootstrap";
+import { Context } from "../store/AppContent";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BuscadorUsuario = () => {
+  const {
+    store,
+    actions: { setUser },
+  } = useContext(Context);
+
+const [busqueda, setBusqueda] = useState('');
+
+const handlefilter = (user) => {
+return user.profile.names?.toString().toLowerCase().includes(busqueda.toLowerCase()) || user.profile.father_lastname?.toLowerCase().includes(busqueda.toLowerCase()) || user.profile.mother_lastname?.toLowerCase().includes(busqueda.toLowerCase())
+} 
+
   return (
     <>
       <Container>
-        <Row className="bg-white m-5">
+        <h1 className="text-center mt-2">Buscador de Usuarios</h1>
+        <Row className="bg-white m-1">
+          <InputGroup className="p-1">
+            <InputGroup.Text>Nombre Usuario</InputGroup.Text>
+            <Form.Control
+              type="text"
+              placeholder="Nombre y Apellidos"
+              id="buscar"
+              onChange={(e)=> setBusqueda(e.target.value)}
+            />
+          </InputGroup>
           <Table striped bordered hover size="sm" className="table border">
             <thead>
               <tr>
-                <th>
-                  <InputGroup>
-                    <InputGroup.Text>Nombre Usuario</InputGroup.Text>
-                    <Form.Control type="text" placeholder="Nombre Apellido"/>
-                  </InputGroup>
-                </th>
-                <th className="text-center"> Estado</th>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Rut</th>
+                <th>Email</th>
+                <th>Tipo de Usuarios</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Antonio Bello</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Andres Valdivia</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Seginmundo Iturra</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Exequiel Gonzalez Cortez</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Emanuel Ginobili</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Facundo Campazzo</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Roberto Carlos</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Jason Kidd</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>LeBron James</td>
-                <td className="text-center">---</td>
-              </tr>
-              <tr>
-                <td>Lukas Doncic</td>
-                <td className="text-center">---</td>
-              </tr>
+              {!!store.users && store.users.length > 0 &&
+                store.users.filter(handlefilter).map((user) => {
+                  return (
+                    <tr key={user.id}>
+                      <td>{user.id}</td>
+                      <td>{user.profile.names}</td>
+                      <td>{user.profile.father_lastname}</td>
+                      <td>{user.profile.mother_lastname}</td>
+                      <td>{user.rut}</td>
+                      <td>{user.profile.email}</td>
+                      <td>{user.roles[0].name}</td>
+                      <td className="text-center">
+                  <Button variant="info"> 
+                    <Link className="text-decoration-none text-white"to={"/admin/solicitudes-usuario/" + user.id + "/editar-contacto"} onClick={()=>setUser(user)}>Editar</Link>
+                  </Button>
+                </td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </Table>
         </Row>

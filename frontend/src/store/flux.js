@@ -101,7 +101,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             updateUser: async (url, user) => {
                 try {
-                    const response = await fetch(url + "/api/users" + user.id, {
+                    const response = await fetch(url + "/api/users/" + user.id, {
                         method: 'PUT',
                         body: JSON.stringify(user),
                         headers: {
