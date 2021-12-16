@@ -58,9 +58,10 @@ const UserLogin = () => {
           </div>
           <div className="col-12 d-flex justify-content-evenly">
           <input type="submit" className="btn btn-primary"/>
-            <MyModal />
+            
           </div>
         </form>
+        <MyModal />
       </Row>
     </Container>
   );
