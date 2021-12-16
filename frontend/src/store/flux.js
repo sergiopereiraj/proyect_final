@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             apiUrl: "http://127.0.0.1:5000",
             contacts: null,
             users: null,
+            user: null,
             email: "",
             password: "",
             rut: "",
@@ -12,29 +13,64 @@ const getState = ({ getStore, getActions, setStore }) => {
             lastname: "",
             phone: "",
             isAuth: false,
-            currentUser: {
-                access_token: "",
-                user: {
-                    id: 1,
-                    name: "Sergio",
-                    lastname: "Pereira",
-                    rut: "16670557-6",
-                    activo: true,
-                    profile: {},
-                    role: [{
-                        id: 1,
-                        name: "Admin"
-                    }]
-                }
-            },
+            currentUser: null,
             
         },
             
 
           
         actions: {
-            onSubmit: data => console.log({ ...data }),
-            onChange: e => { },
+            onSubmit: async user_data => {
+                try {
+                    console.log(user_data)
+                    const store = getStore()
+                    const body = JSON.stringify({
+                        rut: user_data.rut,
+                        email: user_data.email,
+                        password: user_data.password,
+                        names: user_data.nombre,
+                        father_lastname: user_data.apellido,
+                        roles: user_data.roles,
+
+                    });
+                    console.log(body);
+                    const response = await fetch(store.apiUrl + "/api/register",{
+                        method:"POST",
+                        headers:{
+                            "Content-Type": "application/json"
+
+                        },
+                        body : body
+                        
+                    })
+                    const data = await response.json();
+                    console.log(data)
+                } catch (error) {
+                    console.log(error)
+                }
+            },
+            loginUser: async user_data => {
+                try {
+                    console.log(user_data)
+                    const store = getStore()
+                    const response = await fetch(store.apiUrl + "/api/login",{
+                        method:"POST",
+                        headers:{
+                            "Content-Type": "application/json"
+
+                        },
+                        body :JSON.stringify({
+                            rut: user_data.rut,
+                            password: user_data.password,
+                        })
+                        
+                    })
+                    const data = await response.json();
+                    console.log(data)
+                } catch (error) {
+                    console.log(error)
+                }
+            },
             getUsers: async (url) => {
                 try {
                     const response = await fetch(url + "/api/users")
@@ -100,6 +136,14 @@ const getState = ({ getStore, getActions, setStore }) => {
                 updateUser(apiURL, user)
 
             },
+                /* isAunthenticated: ()=>{
+                    if(sessionStorage,getItem("isAuth")){
+                        setStore({
+                            isAuth: sessionStorage.getItem("isAuth"),
+                            currentUser: Json.parse(sessionStorage.getItem("currentUser"))
+                        })
+                    }
+                }, */
             setUser: (user) => {
                 setStore({
                     user

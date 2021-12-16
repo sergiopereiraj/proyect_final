@@ -1,13 +1,10 @@
 import { getDefaultNormalizer } from "@testing-library/dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Context } from "../store/AppContent";
 import { Container, Row, Form, Button } from "react-bootstrap";
+import { useHistory } from "react-router";
 
-const defaultValues = {
-  email: "",
-  input: "",
-};
 
 const PerfilUsuario = () => {
   const { store, actions } = useContext(Context);
@@ -17,11 +14,12 @@ const PerfilUsuario = () => {
     formState: { errors },
     handleSubmit,
   } = useForm({
-    defaultValues: {
-      email: store.email,
-      password: store.password,
-    },
+    
   });
+  const history = useHistory();
+  useEffect(()=>{
+    if(!store.isAuth) history.push("//usuario/perfil");
+  },[])
 
   return (
     <Container>
@@ -34,8 +32,7 @@ const PerfilUsuario = () => {
             <Form.Control
               {...register("email", {
                 required: true,
-                email: true,
-                pattern: /^[A-Za-z0-9]$/i,
+                
               })}
               type="email"
               className={
@@ -55,9 +52,7 @@ const PerfilUsuario = () => {
             <Form.Control
               {...register("password", {
                 required: true,
-                minLength: 8,
-                maxLength: 12,
-                pattern: /^[A-Za-z 0-9]+$/i,
+                
               })}
               type="password"
               className={
