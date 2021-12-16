@@ -1,16 +1,19 @@
 import { getDefaultNormalizer } from "@testing-library/dom";
-import { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Context } from "../store/AppContent";
 import { Container, Row, Form, Button } from "react-bootstrap";
 
-
 const MyForm = () => {
   const { store, actions } = useContext(Context);
-  const { register, formState: { errors }, reset,handleSubmit} = useForm(
-  );
-  
- /*  const onSubmit = (data)=>{
+  const {
+    register,
+    formState: { errors },
+    reset,
+    handleSubmit,
+  } = useForm();
+
+  /*  const onSubmit = (data)=>{
     console.log(data);
     reset();
   } */
@@ -18,7 +21,7 @@ const MyForm = () => {
   return (
     <Container>
       <Row className="bg-white rounded m-5">
-        <form className="row g-3" onSubmit={handleSubmit(actions.onSubmit)}>
+        <Form className="row g-3" onSubmit={handleSubmit(actions.onSubmit)}>
           <div className="col-md-12">
             <Form.Label htmlFor="inputEmail4" className="form-label">
               Email
@@ -26,7 +29,6 @@ const MyForm = () => {
             <Form.Control
               {...register("email", {
                 required: true,
-                
               })}
               type="email"
               className={
@@ -39,9 +41,7 @@ const MyForm = () => {
             </div>
           </div>
           <div className="col-md-12">
-            <Form.Label  className="form-label">
-              Password
-            </Form.Label>
+            <Form.Label className="form-label">Password</Form.Label>
             <Form.Control
               {...register("password", {
                 required: true,
@@ -57,13 +57,10 @@ const MyForm = () => {
             </div>
           </div>
           <div className="col-12">
-            <Form.Label className="form-label">
-              Rut
-            </Form.Label>
+            <Form.Label className="form-label">Rut</Form.Label>
             <Form.Control
               {...register("rut", {
                 required: true,
-
               })}
               type="text"
               className={
@@ -76,13 +73,10 @@ const MyForm = () => {
             </div>
           </div>
           <div className="col-12">
-            <Form.Label className="form-label">
-              Telefono
-            </Form.Label>
+            <Form.Label className="form-label">Telefono</Form.Label>
             <Form.Control
               {...register("telefono", {
                 required: true,
-
               })}
               type="text"
               className={
@@ -95,13 +89,10 @@ const MyForm = () => {
             </div>
           </div>
           <div className="col-md-12">
-            <Form.Label className="form-label">
-              Nombre
-            </Form.Label>
+            <Form.Label className="form-label">Nombre</Form.Label>
             <Form.Control
               {...register("nombre", {
                 required: true,
-
               })}
               type="text"
               className={
@@ -120,7 +111,6 @@ const MyForm = () => {
             <Form.Control
               {...register("apellido", {
                 required: true,
-
               })}
               type="text"
               className={
@@ -132,10 +122,7 @@ const MyForm = () => {
               {errors.apellido?.type === "required" && "Apellido es requerido"}
             </div>
           </div>
-       {/*    <div className="col-md-12">
-
-<div className="col-md-12">
-
+          <div className="col-md-12">
             <Form.Label htmlFor="inputState" className="form-label">
               Tipo de usuario
             </Form.Label>
@@ -146,14 +133,15 @@ const MyForm = () => {
             >
               <option selected>User</option>
               <option>Admin</option>
+              <option>Director</option>
             </Form.Select>
           </div>
           <div className="col-12">
-            <input type="submit" className="btn btn-primary"/>
+            <Button type="submit" className="btn btn-primary"> Enviar </Button>
           </div>
-        </form>
+        </Form>
       </Row>
     </Container>
   );
-}
+};
 export default MyForm;
