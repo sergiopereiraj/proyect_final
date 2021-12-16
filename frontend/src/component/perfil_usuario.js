@@ -16,10 +16,10 @@ const PerfilUsuario = () => {
   } = useForm({
     
   });
-  const history = useHistory();
+  /* const history = useHistory();
   useEffect(()=>{
     if(!store.isAuth) history.push("//usuario/perfil");
-  },[])
+  },[]) */
 
   return (
     <Container>
