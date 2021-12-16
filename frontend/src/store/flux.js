@@ -69,12 +69,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                         method: 'PUT',
                         body: JSON.stringify(user),
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'appliscation/json'
                         }
                     });
                     if (!response.ok) throw new Error("Error al consultar el usuarios")
                     const data = await response.json();
-
+                    
+                    getActions().getUsers(url)
                     setStore({
                         user: data
                     })
@@ -95,9 +96,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             handleSubmitUser: e =>{
                 e.preventDefault();
-                const {apiURL, user} = getStore();
+                const {apiUrl, user} = getStore();
                 const{updateUser} = getActions();
-                updateUser(apiURL, user)
+                updateUser(apiUrl, user)
 
             },
             setUser: (user) => {
