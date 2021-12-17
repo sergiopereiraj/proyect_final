@@ -130,10 +130,14 @@ const MyForm = () => {
               id="inputState"
               className="form-select"
               {...register("roles")}
-            >
-              <option selected>User</option>
-              <option>Admin</option>
-              <option>Director</option>
+            >{
+              !!store.roles && 
+              store.roles.map((rol)=>{
+                return(
+                  <option key={rol.id}>{rol.name}</option>
+                )
+              })
+            }
             </Form.Select>
           </div>
           <div className="col-12">
