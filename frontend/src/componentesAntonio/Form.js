@@ -134,7 +134,7 @@ const MyForm = () => {
               !!store.roles && 
               store.roles.map((rol)=>{
                 return(
-                  <option key={rol.id}>{rol.name}</option>
+                  <option value={rol.id} key={rol.id}>{rol.name}</option>
                 )
               })
             }
