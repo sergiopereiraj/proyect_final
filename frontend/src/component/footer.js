@@ -12,7 +12,7 @@ const Footer = () => {
             className="btn btn-primary btn-lg btn-floating mx-2"
             
           ><Link className="text-decoration-none text-white" to="/contacto">
-            Contactanos</Link>
+            Contáctanos</Link>
           </Button>
           <Button
             type="button"

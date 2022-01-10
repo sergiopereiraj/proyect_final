@@ -8,7 +8,7 @@ import NavsDirector from "./navs_director";
 const Navs = () => {
   const { store, actions } = useContext(Context);
   
-  if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "Usuario")) {
+  if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "User")) {
     return <NavsUsuario />;
   } else if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "Admin")) {
     return <NavsAdmin />;

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Container, Row, Button, Form, ButtonGroup } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/AppContent";
 
 const EditarContacto = () => {
@@ -30,7 +30,8 @@ const EditarContacto = () => {
               name="names"
               id="names"
               placeholder="Nombre"
-              value={!!user && user.profile.names}
+              /* value={!!user && user.profile.names} */
+              value={!!user ? user.profile.names : ""}
               onChange={handleChangeUser}
             />
           </div>
@@ -42,7 +43,7 @@ const EditarContacto = () => {
               name="father_lastname"
               id="father_lastname"
               placeholder="Apellido Paterno"
-              value={!!user && user.profile.father_lastname}
+              value={!!user ? user.profile.father_lastname : ""}
               onChange={handleChangeUser}
             />
           </div>
@@ -54,7 +55,7 @@ const EditarContacto = () => {
               name="mother_lastname"
               id="mother_lastname"
               placeholder="Apellido Materno"
-              value={!!user && user.profile.mother_lastname}
+              value={!!user ? user.profile.mother_lastname : ""}
               onChange={handleChangeUser}
             />
           </div>
@@ -66,7 +67,7 @@ const EditarContacto = () => {
               name="rut"
               id="rut"
               placeholder="12.123.123-1"
-              value={!!user && user.profile.rut}
+              value={!!user ? user.profile.rut : ""}
               onChange={handleChangeUser}
             />
           </div>
@@ -78,7 +79,7 @@ const EditarContacto = () => {
               name="phone"
               id="phone"
               placeholder="+569 12312123"
-              value={!!user && user.profile.phone}
+              value={!!user ? user.profile.phone : ""}
               onChange={handleChangeUser}
             />
           </div>
@@ -90,7 +91,7 @@ const EditarContacto = () => {
               name="email"
               id="email"
               placeholder="antonio.iturra@example.net"
-              value={!!user && user.profile.email}
+              value={!!user ? user.profile.email : ""}
               onChange={handleChangeUser}
             />
           </div>
@@ -102,7 +103,7 @@ const EditarContacto = () => {
               name="password"
               id="password"
               placeholder="xxxxxxxxx"
-              value={!!user && user.profile.password}
+              value={!!user ? user.profile.password : ""}
               onChange={handleChangeUser}
             />
           </div>
@@ -124,9 +125,12 @@ const EditarContacto = () => {
               <option>Director</option>
             </Form.Select>
             </div>
-          <div className="col-md-12 d-flex justify-content-center m-3">
+          <div className="col-md-12 d-flex justify-content-around m-3">
             <Button type="submit" className="btn btn-success">
               Aceptar
+            </Button>
+            <Button type="submit" className="btn btn-info">
+            <Link className="text-decoration-none text-white" to="/admin/solicitudes-usuario">Regresar</Link>
             </Button>
           </div>
         </Form>

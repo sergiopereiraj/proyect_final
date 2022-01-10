@@ -17,6 +17,7 @@ const injectContext = PassedComponent => {
 
         useEffect(() => {
             state.actions.getUsers(state.store.apiUrl);
+            state.actions.getRoles(state.store.apiUrl);
         }, [])
 
 

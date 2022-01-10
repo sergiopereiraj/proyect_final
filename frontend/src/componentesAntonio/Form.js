@@ -1,5 +1,4 @@
-import { getDefaultNormalizer } from "@testing-library/dom";
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 import { useForm } from "react-hook-form";
 import { Context } from "../store/AppContent";
 import { Container, Row, Form, Button } from "react-bootstrap";
@@ -9,7 +8,6 @@ const MyForm = () => {
   const {
     register,
     formState: { errors },
-    reset,
     handleSubmit,
   } = useForm();
 
@@ -106,7 +104,7 @@ const MyForm = () => {
           </div>
           <div className="col-md-12">
             <Form.Label htmlFor="inputCity" className="form-label">
-              Apellido
+              Apellido Paterno
             </Form.Label>
             <Form.Control
               {...register("apellido", {
@@ -123,6 +121,24 @@ const MyForm = () => {
             </div>
           </div>
           <div className="col-md-12">
+            <Form.Label htmlFor="inputCity" className="form-label">
+              Apellido Materno
+            </Form.Label>
+            <Form.Control
+              {...register("apellido2", {
+                required: true,
+              })}
+              type="text"
+              className={
+                "form-control" +
+                (errors.apellido2?.type === "required" ? " is-invalid" : "")
+              }
+            />
+            <div className="invalid-feedback">
+              {errors.apellido2?.type === "required" && "Apellido es requerido"}
+            </div>
+          </div>
+          <div className="col-md-12">
             <Form.Label htmlFor="inputState" className="form-label">
               Tipo de usuario
             </Form.Label>
@@ -130,13 +146,17 @@ const MyForm = () => {
               id="inputState"
               className="form-select"
               {...register("roles")}
-            >
-              <option selected>User</option>
-              <option>Admin</option>
-              <option>Director</option>
+            >{
+              !!store.roles && 
+              store.roles.map((rol)=>{
+                return(
+                  <option value={rol.id} key={rol.id}>{rol.name}</option>
+                )
+              })
+            }
             </Form.Select>
           </div>
-          <div className="col-12">
+          <div className="">
             <Button type="submit" className="btn btn-primary"> Enviar </Button>
           </div>
         </Form>
