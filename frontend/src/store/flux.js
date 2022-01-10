@@ -47,6 +47,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log(data)
                 } catch (error) {
                     console.log(error)
+                    //usar tostify y cambiarlo por el consolelog para mostrar las alertas que ya tengo declaradas en el backend
+
                 }
             },
             loginUser: async (user_data, history) => {
