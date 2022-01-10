@@ -84,7 +84,7 @@ def users(id= None):
         father_lastname= request.json.get("father lastname", "" )
         region= request.json.get("region", "")
         email= request.json.get("email")
-        roles= request.json.get("roles", [2])
+        role= request.json.get("role", 2)
         phone= request.json.get("phone")
         
         if not rut: return jsonify ({"msg": "El rut es requerido"}), 400
@@ -107,9 +107,9 @@ def users(id= None):
         #profile.user_id = user.id
         #profile.save()
 
-        for role in roles:
-            role= Role.query.get(role)
-            user.roles.append(role)
+        
+        role= Role.query.get(role)
+        user.roles.append(role)
 
         user.profile= profile
         
@@ -160,8 +160,8 @@ def register():
         rut= request.json.get("rut")
         password= request.json.get("password")
         names= request.json.get("names", "")
-        mother_lastname= request.json.get("mother lastname", "" )
-        father_lastname= request.json.get("father lastname", "" )
+        mother_lastname= request.json.get("mother_lastname", "" )
+        father_lastname= request.json.get("father_lastname", "" )
         region= request.json.get("region", "")
         email= request.json.get("email")
         roles= request.json.get("roles", [2])
