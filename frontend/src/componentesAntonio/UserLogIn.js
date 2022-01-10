@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Context } from "../store/AppContent";
 import MyModal from "./Modal";
 import { Container, Row, Form } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 const UserLogin = () => {
   const { store, actions } = useContext(Context);
@@ -13,15 +14,12 @@ const UserLogin = () => {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
-  };
+  const history = useHistory();
 
   return (
     <Container>
       <Row className="bg-white rounded m-5">
-        <form className="row g-3" onSubmit={handleSubmit(actions.loginUser)}>
+        <form className="row g-3" onSubmit={handleSubmit((data)=>actions.loginUser(data,history))}>
           <div className="col-md-12">
             <Form.Label className="form-label">Rut</Form.Label>
             <Form.Control
