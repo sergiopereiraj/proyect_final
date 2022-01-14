@@ -16,7 +16,7 @@ const CartaGraficos = () => {
           <CardGroup className="mt-3">
             <Card className="col-sm-4 h-50 d-inline-block">
               <Card.Img                
-                src="https://picsum.photos/id/237/1700/1800"
+                src="/fotos/grafico.jpg"
                 fluid
               />
               <Card.Body>
@@ -33,7 +33,7 @@ const CartaGraficos = () => {
             </Card>
             <Card className="col-sm-4 h-50 d-inline-block">
               <Card.Img                
-                src="https://picsum.photos/id/237/1700/1800"
+                src="/fotos/grafico.jpg"
                 fluid
               />
               <Card.Body>
@@ -50,7 +50,7 @@ const CartaGraficos = () => {
             </Card>
             <Card className="col-sm-4 h-50 d-inline-block">
               <Card.Img                
-                src="https://picsum.photos/id/237/1700/1800"
+                src="/fotos/grafico.jpg"
                 fluid
               />
               <Card.Body>

@@ -5,7 +5,7 @@ import { Context } from "../store/AppContent";
 
 const SolicitudesUsuarios = () => {
   const {
-    store/* : { user, apiUrl } */,
+    store /* : { user, apiUrl } */,
     actions: { setUser, deleteUser },
   } = useContext(Context);
 
@@ -42,14 +42,10 @@ const SolicitudesUsuarios = () => {
                       <td>{user.profile.email}</td>
                       <td>{user.roles[0].name}</td>
                       <td className="text-center">
-                        <Button variant="success">Acepta</Button>
+                        <Button variant="success"><i class="far fa-check-circle"></i></Button>
                       </td>
                       <td className="text-center">
-                        <Button
-                          variant="danger"
-                        >
-                          Rechaza
-                        </Button>
+                        <Button variant="danger"><i class="far fa-trash-alt"></i></Button>
                       </td>
                       <td className="text-center">
                         <Button variant="info">
@@ -62,7 +58,7 @@ const SolicitudesUsuarios = () => {
                             }
                             onClick={() => setUser(user)}
                           >
-                            Editar
+                            <i class="far fa-edit"></i>
                           </Link>
                         </Button>
                       </td>

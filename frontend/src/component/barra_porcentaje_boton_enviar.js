@@ -17,6 +17,10 @@ const BarraPorcentajeBoton = forwardRef((props, ref) => {
     }
   }));
 
+  const envio = () =>{
+    alert('Formualrio Guardado')
+  };
+
   return (
     <>
       <Container>
@@ -26,7 +30,7 @@ const BarraPorcentajeBoton = forwardRef((props, ref) => {
         <br/>
         <Row>
           {" "}
-          {<Button className="m-2"onSubmit={actions}>Enviar</Button>}
+          {<Button className="m-2"onSubmit={actions} onClick={e=>envio()}>Enviar</Button>}
         </Row>
       </Container>
     </>

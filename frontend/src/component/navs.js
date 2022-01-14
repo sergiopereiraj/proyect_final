@@ -6,15 +6,15 @@ import { Context } from "../store/AppContent";
 import NavsDirector from "./navs_director";
 
 const Navs = () => {
-  const { store, actions } = useContext(Context);
+  const { store } = useContext(Context);
   
-  if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "User")) {
+  if (!!store.currentUser && store.currentUser.user.roles.find(role => role.name === "user")) {
     return <NavsUsuario />;
-  } else if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "Admin")) {
+  } else if (!!store.currentUser && store.currentUser.user.roles.find(role => role.name === "admin")) {
     return <NavsAdmin />;
-  } else if (!!store.currentUser && store.currentUser.user.role.find(role => role.name === "Director")) {
+  } else if (!!store.currentUser && store.currentUser.user.roles.find(role => role.name === "director")) {
     return <NavsDirector />;
-  } else return <NavsInicio />;
+  } else return <NavsDirector />;
 };
 
 export default Navs;

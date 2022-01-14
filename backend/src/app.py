@@ -149,7 +149,7 @@ def login():
 
         data = {
             "access_token": accesses_token,   
-            "user": user_exist.serialize()
+            "user": user_exist.serialize_with_roles()
         }
 
         return jsonify(data),200

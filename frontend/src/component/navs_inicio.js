@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, Container, Offcanvas, NavDropdown } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom"
 
 function NavsInicio() {

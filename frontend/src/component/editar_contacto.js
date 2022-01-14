@@ -6,7 +6,7 @@ import { Context } from "../store/AppContent";
 
 const EditarContacto = () => {
   const {
-    store: { user, apiUrl },
+    store: { user, apiUrl, roles },
     actions: { getUserById, handleChangeUser, handleSubmitUser, updateUser },
   } = useContext(Context);
   const { id } = useParams();
@@ -14,13 +14,23 @@ const EditarContacto = () => {
     getUserById(apiUrl, id);
   }, []);
 
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
+ 
   return (
     <Container>
+      <h1 className="text-center mt-3">
+          Editar usuario: {!!user ? user.profile.names : ""} {!!user ? user.profile.father_lastname : ""}
+        </h1>
       <Row className="bg-white m-5">
         <Form className="row g-3" onSubmit={(e)=>{
           e.preventDefault();
-          updateUser(apiUrl, user)
+          updateUser(apiUrl, user);
+          console.log(user)
         }}>
           <div className="col-md-12">
             <Form.Label className="form-label">Nombre</Form.Label>
@@ -112,17 +122,19 @@ const EditarContacto = () => {
               Tipo de usuario
             </Form.Label>
             <Form.Select
-              name="roles"
-              id="roles"
+              id="inputState"
               className="form-select"
-              placeholder=""
-              value={!! user && user.roles[0].name}
               onChange={handleChangeUser}
-            >
-              <option selected></option>
-              <option >User</option>
-              <option>Admin</option>
-              <option>Director</option>
+              defaulvalue={!!user && user.roles[0].name}
+              {...register("roles")}
+            >{
+              !!roles && 
+              roles.map((rol)=>{
+                return(
+                  <option value={rol.id} key={rol.id}>{rol.name}</option>
+                )
+              })
+            }
             </Form.Select>
             </div>
           <div className="col-md-12 d-flex justify-content-around m-3">
